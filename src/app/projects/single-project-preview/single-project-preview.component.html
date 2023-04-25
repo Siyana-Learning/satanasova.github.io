@@ -1,6 +1,6 @@
-<div class="wrapper">
+<!-- <div class="wrapper w-max"> -->
   <div class="device phone">
-    <iframe [src]="iframeSrc | safe"></iframe>
+    <iframe *ngIf="showFrame" [src]="iframeSrc | safe" #iframe></iframe>
   </div>
   <!-- <div class="device tablet">
     <iframe src="https://satanasova.github.io/delivery-app-frontend/"></iframe>
@@ -11,4 +11,4 @@
   <div class="device laptop">
     <iframe src="https://satanasova.github.io/delivery-app-frontend/"></iframe>
   </div> -->
-</div>
+<!-- </div> -->

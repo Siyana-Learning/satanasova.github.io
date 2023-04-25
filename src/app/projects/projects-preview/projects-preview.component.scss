@@ -1,0 +1,63 @@
+.container {
+  width: 500px;
+  height: 650px;
+  padding: 20px 0 0 160px;
+  // perspective: 1000px;
+  // perspective-origin: 27% -10%;
+  justify-content: space-between;
+
+  .carousel {
+    // transform-style: preserve-3d;
+    // transform: translateZ(-340px);
+    position: relative;
+    margin: 0;
+    transition: 1s;
+    
+    app-single-project-preview {
+      position: absolute;
+      // opacity: .5;
+      transition: 1s;
+        &:not(.active) {
+          filter: blur(2px) saturate(0.1) opacity(0.5);
+          user-select: none;
+          z-index: -1;
+          // transform: rotateY(0deg) translateZ(335px) translateX(142px) scale(0.65); next
+          // transform: rotateY(0) translateZ(334px) translateX(-160px) scale(0.65); prev
+        }
+
+        &.prev {
+          transform: translateX(-200px) scale(0.8); 
+        }
+
+        &.next {
+          transform: translateX(200px) scale(0.8);
+        }
+      
+    //     &:nth-child(1) { transform: translateZ(340px) scale(.85); }
+    //     // &:nth-child(2) { transform: rotateY(45deg) translateZ(540px) scale(0.8); }
+    //     // &:nth-child(2) { transform: rotateY(45deg) translateZ(340px) scale(0.85); }
+    //     &:nth-child(2) { transform: rotateY(0deg) translateZ(335px) translateX(142px) scale(0.65);}
+    //     // &:nth-child(3) { transform: rotateY(90deg) translateZ(540px) scale(.8); }
+    //     &:nth-child(3) { transform: rotateY(90deg) translateZ(340px) scale(0.85);
+    //                       opacity: 0 }
+    //     // &:nth-child(4) { transform: rotateY(135deg) translateZ(540px) scale(.8); }
+    //     &:nth-child(4) { transform: rotateY(135deg) translateZ(340px) scale(.85);
+    //                       opacity: 0 }
+    //     // &:nth-child(5) { transform: rotateY(180deg) translateZ(540px) scale(.8); }
+    //     &:nth-child(5) { transform: rotateY(180deg) translateZ(340px) scale(.85);
+    //                       opacity: 0 }
+    //     // &:nth-child(6) { transform: rotateY(225deg) translateZ(540px) scale(.8); }
+    //     &:nth-child(6) { transform: rotateY(225deg) translateZ(340px) scale(.85);
+    //                       opacity: 0 }
+    //     // &:nth-child(7) { transform: rotateY(270deg) translateZ(540px) scale(.8); }
+    //     &:nth-child(7) { transform: rotateY(270deg) translateZ(340px) scale(.85);
+    //                       opacity: 0 }
+    //     // &:nth-child(8) { transform: rotateY(315deg) translateZ(540px) scale(.8); }
+    //     // &:nth-child(8) { transform: rotateY(315deg) translateZ(340px) scale(.85); }
+    //     &:nth-child(8) { transform: rotateY(0) translateZ(334px) translateX(-160px) scale(0.65); }
+    }
+
+  }
+}
+
+       
