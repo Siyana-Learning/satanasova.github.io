@@ -1,8 +1,7 @@
 export type Project = {
   src: string;
   description: ProjectDescription;
-  active?: boolean,
-  showFrame?: boolean
+  showFrame?: boolean,
 }
 
 export type ProjectDescription = {
