@@ -44,12 +44,30 @@ export class ProjectsService {
         usedTools: ['JS'], 
         descriptionText: 'Photo Cutter desc'},
     },
+    {
+      src: 'https://satanasova.github.io/photo-cutter/', 
+      description: {
+        title: 'Photo Cutter', 
+        usedTools: ['JS'], 
+        descriptionText: 'Photo Cutter desc'},
+    },
+    {
+      src: 'https://satanasova.github.io/photo-cutter/', 
+      description: {
+        title: 'Photo Cutter', 
+        usedTools: ['JS'], 
+        descriptionText: 'Photo Cutter desc'},
+    },
   ]
 
-  projectsObs: BehaviorSubject<Project[] | any> = new BehaviorSubject(this.projects);
+  // projectsObs: BehaviorSubject<Project[] | any> = new BehaviorSubject(this.projects);
 
   constructor() {
     
+  }
+
+  getProjects() {
+    return this.projects;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Project } from './models';
 import { BehaviorSubject } from 'rxjs';
 import { ProjectsService } from '../projects.service';
@@ -9,15 +9,23 @@ import { ProjectsService } from '../projects.service';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  constructor(private projectsService: ProjectsService) { 
+  @Input() projects: Project[] = [];
+  activeProjectIndex: number = 0;
+
+  constructor() { 
   }
 
   ngOnInit(): void {
+    console.log(this.projects);
   }
 
   prev() {
   }
 
   next() {
+  }
+
+  changeProjectIndex(activeProjectIdx: any) {
+    this.activeProjectIndex = activeProjectIdx
   }
 }

@@ -1,0 +1,3 @@
+<div [ngStyle]="{'width.px': deviceWidth, 'height.px': deviceHeight}" class="project-preview device bg-gray-800 rounded-3xl">
+  <iframe *ngIf="showFrame" [src]="iframeSrc | safe" ></iframe>
+</div>

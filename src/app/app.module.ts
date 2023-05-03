@@ -18,6 +18,7 @@ import { ProjectsModule } from './projects/projects.module';
   imports: [
     BrowserModule,
     UtilsModule,
+    ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

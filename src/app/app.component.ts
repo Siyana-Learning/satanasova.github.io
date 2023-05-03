@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProjectsService } from './projects/projects.service';
+import { Project } from './projects/projects/models';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  projects: Project[];
+  
+  constructor(private projectsService: ProjectsService) {
+    this.projects = this.projectsService.getProjects();
+  }
 }
