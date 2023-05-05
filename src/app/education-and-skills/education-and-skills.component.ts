@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ColorService } from '../utils/color.service';
 
 @Component({
   selector: 'app-education-and-skills',
@@ -6,8 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./education-and-skills.component.scss']
 })
 export class EducationAndSkillsComponent implements OnInit {
+  lifeEvents: any = [
+    {
+      date: 'November 2021 - February 2022',
+      title: '"Junior Web Developer" Internship',
+      subtitle: 'INNOVATOR, Varna',
+      certificate: 'http://asd.com'
+    },
+    {
+      date: 'February 2018',
+      title: "Bachelor's Degree",
+      subtitle: 'University of Economics, Varna'
+    },
+    {
+      date: 'May 2013',
+      title: 'High School Diploma',
+      subtitle: 'High School of Mathematics Dr. Petar Beron, Varna'
+    },
+    {
+      date: 'October 1994',
+      title: 'Hello World'
+    },
+  ]
 
-  constructor() { }
+  constructor(public colorService: ColorService) { }
 
   ngOnInit(): void {
   }

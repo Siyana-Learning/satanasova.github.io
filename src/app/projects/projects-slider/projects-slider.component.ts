@@ -71,7 +71,7 @@ export class ProjectsSliderComponent implements OnInit {
     }
 
     style.transform = transform.join(' ');
-    // style.opacity = 1 - Math.abs(indexDistance * 0.3)
+    style.opacity = indexDistance <= 3 ? 1 : 0;
     style.zIndex = 1000 - Math.abs(indexDistance * 100)
     style.filter = `blur(${Math.abs(indexDistance)*2}px)`
  

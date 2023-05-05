@@ -2,12 +2,13 @@
   display: flex;
   height: calc(145px + 4vw);
   width: calc(145px + 4vw);
-  background-image: linear-gradient(to bottom right,  #3F83F8, #A4CAFE, white);
+  // background: linear-gradient(to bottom right,  rgb(63, 131, 248), lighten(rgb(63, 131, 248), 20%), white);
+  // background-image: linear-gradient(to bottom right,  #E74694, #42389D, #3F83F8);
 }
 
 .shape-inner {	
-  height: calc(140px + 4vw);
-  width: calc(140px + 4vw);
+  height: calc(135px + 4vw);
+  width: calc(135px + 4vw);
   background: url('../../assets/Layer\ 5.png') no-repeat center;
   background-size: cover;
   margin: auto;

@@ -21,7 +21,7 @@
 
 </div>
 
-<div class="slider w-full flex transition-all duration-1000">
+<div class="slider w-full flex transition-all duration-1000 bg-gray-900">
   <app-project-preview class="transition-all duration-1000 bg-gray-700 rounded-3xl" [ngClass]="['index-' + getDistance(i)]" *ngFor="let project of projects; let i = index" [ngStyle]="getProjectStyling(projects, i)" [deviceWidth]="deviceType.width" [deviceHeight]="deviceType.height" [iframeSrc]="project.src" [showFrame]="false" [text]="i + ''"></app-project-preview>
 </div>
 

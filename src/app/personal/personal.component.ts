@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ColorService } from '../utils/color.service';
 
 @Component({
   selector: 'app-personal',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public colorService: ColorService) { }
 
   ngOnInit(): void {
   }
 
+ 
 }
