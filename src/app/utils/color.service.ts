@@ -8,26 +8,13 @@ export class ColorService {
   constructor() { }
 
   getColor(): string {
-    // return '#f0f'
-    // 1 2 3 4 5 6 7 8 9 10
-    // 1 2 0 1 2 0 1 2 0
+    const colors = ['#0E9F6E', '#3F83F8', '#9061F9', '#E74694', '#FACA15'];
+    const colorsTailwind = ['green-500', 'blue-500', 'purple-500', 'pink-500', 'yellow-300'];
+    const scrollPosition = window.scrollY;
+    const colorIndex = Math.floor(scrollPosition / 100) % colors.length
 
-    // '# 0-255 0-255 0-255'
-    // '# '
-    // 123456789abcdef
-    // 00 -> 00 -> min
-    // ff -> 256 -> max
-
-    // #99 99 99
-    // #50 50 99
-    // #5 5 5
-
-    const colorValue = window.scrollY % 255;
-    console.log(colorValue);
-    // 0 - 255
-    // #000000 - #FFFFFF
-    // rgb(0-255, 0-255, 0-255)
-    return `rgb(${colorValue}, ${255 - colorValue}, ${colorValue})`
+    return colors[colorIndex]
+    // return colorsTailwind[colorIndex]
 
   }
 }

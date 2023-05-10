@@ -6,7 +6,7 @@
     </div>
 
     <div class="personal-info text-md">
-      <h2 class="name text-5xl transition-all font-extrabold"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" class="transition-colors duration-300 ease-in ps-2"> ATANASOVA </span></h2>
+      <h2 class="name text-5xl transition-all font-extrabold"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" [class]="'text-' + colorService.getColor()" class="transition-colors duration-300 ease-in ps-2"> ATANASOVA </span></h2>
       <p class="role py-3">JUNIOR FRONTEND DEVELOPER</p>
 
       <div class="divider block w-40 h-0.5 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
@@ -49,3 +49,4 @@
   </div>
 
 </section>
+

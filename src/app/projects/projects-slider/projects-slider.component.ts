@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DeviceType, Project } from '../projects/models';
+import { ColorService } from 'src/app/utils/color.service';
 
 @Component({
   selector: 'app-projects-slider',
@@ -12,7 +13,7 @@ export class ProjectsSliderComponent implements OnInit {
   @Output() activeProjectChanged: EventEmitter<number> = new EventEmitter();
   deviceType: DeviceType = DeviceType.PHONE;
 
-  constructor() { }
+  constructor(public colorService: ColorService) { }
 
   ngOnInit(): void { }
 
@@ -72,7 +73,7 @@ export class ProjectsSliderComponent implements OnInit {
 
     style.transform = transform.join(' ');
     style.opacity = indexDistance <= 3 ? 1 : 0;
-    style.zIndex = 1000 - Math.abs(indexDistance * 100)
+    style.zIndex = 49 - Math.abs(indexDistance * 10)
     style.filter = `blur(${Math.abs(indexDistance)*2}px)`
  
     // console.log(transform)

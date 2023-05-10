@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   showMinHeader: boolean = false;
 
   scrollObs = fromEvent(window, 'scroll');
-  throttledScrollObs = this.scrollObs.pipe(throttleTime(500));
+  throttledScrollObs = this.scrollObs.pipe(throttleTime(300));
   // intervalObs = timer(0,3000)
   
   constructor(private projectsService: ProjectsService, private colorService: ColorService) {

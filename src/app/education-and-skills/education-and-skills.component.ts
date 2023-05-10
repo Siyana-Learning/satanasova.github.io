@@ -12,11 +12,14 @@ export class EducationAndSkillsComponent implements OnInit {
       date: 'November 2021 - February 2022',
       title: '"Junior Web Developer" Internship',
       subtitle: 'INNOVATOR, Varna',
-      certificate: 'http://asd.com'
+      certificate: {
+        src: '../../assets/certificate.png',
+        show: false
+      } 
     },
     {
       date: 'February 2018',
-      title: "Bachelor's Degree",
+      title: "Bachelor's Degree - Finance",
       subtitle: 'University of Economics, Varna'
     },
     {
