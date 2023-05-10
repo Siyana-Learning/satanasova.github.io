@@ -1,21 +1,17 @@
-<section class="px-10 bg-gray-700 text-gray-100 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+<section [ngClass]="showMinimizedHeader ? 'minimized' : ''"  class="bg-gray-700 text-gray-100">
 
-  <!-- <div class="section-heading  pt-5 pb-3">
-    <h3 class="text-2xl">Personal</h3>
-    <hr class="h-px w-50 border-t-0 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent opacity-100" />
-  </div> -->
-
-  <div class="section-content flex flex-wrap py-10" >
-    <div class="avatar shape-outer circle transition-colors duration-300 ease-in" [ngStyle]="{'background':  'linear-gradient(to bottom right,' +  colorService.getColor() + ' 40%, white 70%)'}">
-      <div class="shape-inner circle"></div>
+  <div class="section-content py-10 flex flex-wrap items-center transition-all duration-300 ease-in" >
+    <div class="avatar mx-10 shape-outer flex rounded-full transition-all duration-300 ease-in" [ngStyle]="{'background':  'linear-gradient(to bottom right,' +  colorService.getColor() + ' 40%, white 70%)'}">
+      <div class="shape-inner rounded-full"></div>
     </div>
 
-    <div class="personal-info ps-10 text-md">
-      <h2 class="name text-5xl font-extrabold"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" class="transition-colors duration-300 ease-in ps-2"> ATANASOVA </span></h2>
+    <div class="personal-info text-md">
+      <h2 class="name text-5xl transition-all font-extrabold"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" class="transition-colors duration-300 ease-in ps-2"> ATANASOVA </span></h2>
       <p class="role py-3">JUNIOR FRONTEND DEVELOPER</p>
-      <div class="divider block w-40 transition-colors duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
 
-      <div class="contacts pt-5">
+      <div class="divider block w-40 h-0.5 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+
+      <div class="contacts block pt-5">
         <div class="flex pb-3">
           <div class="location flex items-center pe-5">
             <svg class="w-5 h-5 text-blue-500 transition-colors duration-300 ease-in"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.71 395.71" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"></path> </g> </g></svg>         

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ColorService } from '../utils/color.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { ColorService } from '../utils/color.service';
   styleUrls: ['./personal.component.scss']
 })
 export class PersonalComponent implements OnInit {
+  @Input() showMinimizedHeader: boolean = false
 
   constructor(public colorService: ColorService) { }
 
