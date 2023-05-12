@@ -13,7 +13,7 @@ export class EducationAndSkillsComponent implements OnInit {
       title: '"Junior Web Developer" Internship',
       subtitle: 'INNOVATOR, Varna',
       certificate: {
-        src: '../../assets/certificate.png',
+        src: '../../assets/images/certificate.png',
         show: false
       } 
     },

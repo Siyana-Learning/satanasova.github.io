@@ -6,19 +6,10 @@ export type Project = {
 
 export type ProjectDescription = {
   title: string;
-  usedTools: string[];
+  usedTech: string[];
   descriptionText: string;
 }
 
-// export enum DeviceType {
-//   Mobile,
-//   Tablet,
-//   Laptop
-// }
-
-// export interface Mobile {
-//   width: 
-// }
 
 export class DeviceType {
   static readonly PHONE = new DeviceType('phone', 360, 720);

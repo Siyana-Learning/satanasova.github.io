@@ -11,14 +11,14 @@ export class ProjectsService {
       src: 'https://satanasova.github.io/UD-final-task/', 
       description: {
         title: 'Rolso', 
-        usedTools: ['Pug'], 
+        usedTech: ['pug', 'sass', 'js', 'jquery'], 
         descriptionText: 'Rolso desc'},
     },
     {
       src: 'https://satanasova.github.io/delivery-app-frontend/',
       description: {
         title: 'Delivery App',
-        usedTools: ['Angular'], 
+        usedTech: ['angular', 'sass'], 
         descriptionText: 'Delivery App desc'},
       
     },
@@ -26,7 +26,7 @@ export class ProjectsService {
       src: 'https://satanasova.github.io/photo-cutter/', 
       description: {
         title: 'Photo Cutter', 
-        usedTools: ['JS'], 
+        usedTech: ['html', 'sass','js'], 
         descriptionText: 'Photo Cutter desc'},
 
     },
@@ -34,28 +34,28 @@ export class ProjectsService {
       src: 'https://satanasova.github.io/UD-final-task/', 
       description: {
         title: 'Rolso', 
-        usedTools: ['Pug'], 
+        usedTech: ['html', 'sass', 'pug', 'jquery'], 
         descriptionText: 'Rolso desc'},
     },
     {
       src: 'https://satanasova.github.io/photo-cutter/', 
       description: {
         title: 'Photo Cutter', 
-        usedTools: ['JS'], 
+        usedTech: ['js'], 
         descriptionText: 'Photo Cutter desc'},
     },
     {
       src: 'https://satanasova.github.io/photo-cutter/', 
       description: {
         title: 'Photo Cutter', 
-        usedTools: ['JS'], 
+        usedTech: ['js'], 
         descriptionText: 'Photo Cutter desc'},
     },
     {
       src: 'https://satanasova.github.io/photo-cutter/', 
       description: {
         title: 'Photo Cutter', 
-        usedTools: ['JS'], 
+        usedTech: ['js'], 
         descriptionText: 'Photo Cutter desc'},
     },
   ]
