@@ -1,43 +1,106 @@
-<div class="education p-10 bg-white w-1/2">
-  <!-- <h2 [ngStyle]="{'color': colorService.getColor()}" class="font-semibold text-xl">EDUCATION AND QUALIFIATION</h2>
-  <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in mt-1 mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div> -->
-
-  <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
-    <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z"></path>
-        <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z"></path>
-        <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z"></path>
-      </svg>
-    </span>
-    EDUCATION AND QUALIFIATION
-  </h2>
-  <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
-
-
-  <ol [ngStyle]="{'border-color': colorService.getColor()}" class="relative border-l transition-colors duration-300 ease-in">          
-    <li *ngFor="let lifeEvent of lifeEvents" class="mb-10 ml-4">
-      <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
-      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
-      <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
-      <p *ngIf="lifeEvent.subtitle" class="text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
-      <div *ngIf="lifeEvent.certificate" >
-        <a (click)="lifeEvent.certificate.show = true" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-            <path clip-rule="evenodd" fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"></path>
-          </svg>
-           View Certificate
-        </a>
-        <div [ngClass]="!lifeEvent.certificate.show ? 'hidden-modal' : '' " class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
-          <img class="max-h-full" [src]="lifeEvent.certificate.src" alt="">
-          <svg (click)="lifeEvent.certificate.show = false" class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
-          </svg>
+<div class="flex">
+  <div class="education p-10 bg-white w-1/2">
+    <!-- <h2 [ngStyle]="{'color': colorService.getColor()}" class="font-semibold text-xl">EDUCATION AND QUALIFIATION</h2>
+    <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in mt-1 mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div> -->
+  
+    <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
+      <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z"></path>
+          <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z"></path>
+          <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z"></path>
+        </svg>
+      </span>
+      EDUCATION AND QUALIFIATION
+    </h2>
+    <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+  
+  
+    <ol [ngStyle]="{'border-color': colorService.getColor()}" class="relative border-l transition-colors duration-300 ease-in">          
+      <li *ngFor="let lifeEvent of lifeEvents" class="mb-10 ml-4">
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
+        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
+        <p *ngIf="lifeEvent.subtitle" class="text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
+        <div *ngIf="lifeEvent.certificate" >
+          <a (click)="lifeEvent.certificate.show = true" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+              <path clip-rule="evenodd" fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+             View Certificate
+          </a>
+          <div [ngClass]="!lifeEvent.certificate.show ? 'hidden-modal' : '' " class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
+            <img class="max-h-full" [src]="lifeEvent.certificate.src" alt="">
+            <svg (click)="lifeEvent.certificate.show = false" class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+            </svg>
+          </div>
         </div>
-      </div>
-      
-    </li>
+        
+      </li>
+  
+    </ol>
+  </div>
+  
+  <div class="profile p-10 bg-white w-1/2">
+    <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
+      <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"></path>
+        </svg>
+      </span>
+      PROFILE
+    </h2>
+    <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+  
+    <div class="tech-icons flex justify-between pb-3">
+      <span class="text-3xl icon-html"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+      <span class="text-3xl icon-pug"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span></span>  
+      <span class="text-3xl icon-css"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+      <span class="text-3xl icon-sass"></span>
+      <span class="text-3xl icon-bootstrap"></span>
+      <span class="text-3xl icon-tailwind"></span>
+      <span class="text-3xl icon-js"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+      <span class="text-3xl icon-ts"></span>
+      <span class="text-3xl icon-jquery"></span>
+      <span class="text-3xl icon-angular"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+      <span class="text-3xl icon-npm"></span>
+      <span class="text-3xl icon-postman"></span>
+      <span class="text-3xl icon-github-black"></span>
+      <span class="text-3xl icon-ps"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+      <span class="text-3xl icon-figma"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+      <span class="text-3xl icon-vscode"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+    </div>
 
-  </ol>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed neque animi ullam earum aliquid illum accusantium necessitatibus reprehenderit fugit harum nesciunt officiis, itaque quaerat commodi laudantium blanditiis, ipsa maxime. Quae!
+      Molestiae excepturi voluptatem qui? Enim officiis veniam vitae repellendus natus ad unde rem illum quis voluptas corporis commodi optio magni veritatis ipsum mollitia recusandae, consequatur fugit aspernatur impedit! Vitae, alias!
+    </p>
+
+    <ul class="max-w-md space-y-1 list-inside py-3">
+      <li class="flex items-center" >
+        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
+        </svg>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      </li>
+      <li class="flex items-center" >
+        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
+        </svg>
+        Dolor sit amet, consectetur adipisicing elit. 
+      </li>
+      <li class="flex items-center" >
+        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
+        </svg>
+        Ipsum dolor sit amet, consectetur adipisicing elit. 
+      </li>
+    </ul>
+
+    <p>Ullam in esse, cum aliquam nostrum voluptate harum molestias corrupti aut neque consequatur iure, autem delectus dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facilis similique quasi minus aspernatur accusamus illum voluptatem dicta explicabo nesciunt atque, mollitia, unde, accusantium magnam nemo possimus quidem laborum architecto.</p>
+
+  </div>
+  
 </div>
