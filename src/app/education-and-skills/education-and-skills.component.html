@@ -1,5 +1,5 @@
-<div class="flex">
-  <div class="education p-10 bg-white w-1/2">
+<div class="flex flex-wrap py-10">
+  <div class="education px-2 md:px-10 bg-white w-full md:w-1/2">
     <!-- <h2 [ngStyle]="{'color': colorService.getColor()}" class="font-semibold text-xl">EDUCATION AND QUALIFIATION</h2>
     <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in mt-1 mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div> -->
   
@@ -43,7 +43,7 @@
     </ol>
   </div>
   
-  <div class="profile p-10 bg-white w-1/2">
+  <div class="profile px-2 md:px-10 bg-white w-full md:w-1/2">
     <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
       <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -54,7 +54,7 @@
     </h2>
     <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
-    <div class="tech-icons flex justify-between pb-3">
+    <div class="tech-icons flex flex-wrap justify-center sm:justify-between md:justify-center lg:justify-between pb-3">
       <span class="text-3xl icon-html"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
       <span class="text-3xl icon-pug"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span></span>  
       <span class="text-3xl icon-css"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
@@ -80,21 +80,15 @@
 
     <ul class="max-w-md space-y-1 list-inside py-3">
       <li class="flex items-center" >
-        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
-        </svg>
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
       </li>
       <li class="flex items-center" >
-        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
-        </svg>
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Dolor sit amet, consectetur adipisicing elit. 
       </li>
       <li class="flex items-center" >
-        <svg [ngStyle]="{'color': colorService.getColor()}" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"></path>
-        </svg>
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Ipsum dolor sit amet, consectetur adipisicing elit. 
       </li>
     </ul>
