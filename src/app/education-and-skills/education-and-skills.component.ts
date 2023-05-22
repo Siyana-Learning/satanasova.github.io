@@ -31,11 +31,15 @@ export class EducationAndSkillsComponent implements OnInit {
       date: 'October 1994',
       title: 'Hello World'
     },
-  ]
+  ];
+
+  viewInit: boolean = false;
 
   constructor(public colorService: ColorService) { }
 
+
   ngOnInit(): void {
+    setTimeout(() => {this.viewInit = true},0)
   }
 
 }

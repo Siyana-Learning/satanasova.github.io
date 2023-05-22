@@ -22,7 +22,7 @@
         <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
         <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
         <p *ngIf="lifeEvent.subtitle" class="text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
-        <div *ngIf="lifeEvent.certificate" >
+        <div *ngIf="lifeEvent.certificate" [ngClass]="viewInit ? '' : 'hidden'">
           <a (click)="lifeEvent.certificate.show = true" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
@@ -78,17 +78,17 @@
       Molestiae excepturi voluptatem qui? Enim officiis veniam vitae repellendus natus ad unde rem illum quis voluptas corporis commodi optio magni veritatis ipsum mollitia recusandae, consequatur fugit aspernatur impedit! Vitae, alias!
     </p>
 
-    <ul class="max-w-md space-y-1 list-inside py-3">
-      <li class="flex items-center" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    <ul class="max-w-md space-y-1 list-inside py-3 relative left-1.5">
+      <li class="flex items-center ms-3" >
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
       </li>
-      <li class="flex items-center" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
+      <li class="flex items-center ms-3" >
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Dolor sit amet, consectetur adipisicing elit. 
       </li>
-      <li class="flex items-center" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
+      <li class="flex items-center ms-3" >
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Ipsum dolor sit amet, consectetur adipisicing elit. 
       </li>
     </ul>

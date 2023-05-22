@@ -1,11 +1,11 @@
 section {
   box-shadow: 0 0 15px 0 #111827;
-  .section-content {
-    .avatar.shape-outer {
-      width: calc(9rem + 4vw);
-      height: calc(9rem + 4vw);
-    }
-  }
+  // .section-content {
+  //   .avatar.shape-outer {
+  //     // width: calc(9rem + 4vw);
+  //     // height: calc(9rem + 4vw);
+  //   }
+  // }
 
   &.minimized {
     .section-content {
@@ -13,8 +13,8 @@ section {
       padding-bottom: .5rem;
 
       .avatar.shape-outer {
-        width: calc(3rem + 4vw);
-        height: calc(3rem + 4vw);
+        width: 6rem;
+        height: 6rem;
         margin-left: 1.25rem;
         margin-right: 1.25rem;
         

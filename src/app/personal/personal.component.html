@@ -1,24 +1,24 @@
 <section [ngClass]="showMinimizedHeader ? 'minimized' : ''"  class="bg-gray-700 text-gray-100">
 
-  <div class="section-content py-10 flex flex-wrap items-center transition-all duration-300 ease-in" >
-    <div class="avatar mx-10 shape-outer flex rounded-full transition-all duration-300 ease-in" [ngStyle]="{'background':  'linear-gradient(to bottom right,' +  colorService.getColor() + ' 40%, white 70%)'}">
+  <div class="section-content py-2 sm:py-10 flex flex-wrap justify-center sm:justify-start items-center transition-all duration-300 ease-in" >
+    <div class="avatar shape-outer mx-10 sm:mx-5 w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 flex rounded-full transition-all duration-300 ease-in" [ngStyle]="{'background':  'linear-gradient(to bottom right,' +  colorService.getColor() + ' 40%, white 70%)'}">
       <div class="shape-inner rounded-full"></div>
     </div>
 
-    <div class="personal-info text-md">
-      <h2 class="name text-5xl transition-all font-extrabold"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" [class]="'text-' + colorService.getColor()" class="transition-colors duration-300 ease-in ps-2"> ATANASOVA </span></h2>
-      <p class="role py-3">JUNIOR FRONTEND DEVELOPER</p>
+    <div class="personal-info text-md text-center sm:text-left">
+      <h2 class="name text-3xl md:text-5xl font-extrabold transition-all duration-300 ease-in"> SIYANA <span [ngStyle]="{'color': colorService.getColor()}" [class]="'text-' + colorService.getColor()" class="transition-colors duration-300 ease-in" > ATANASOVA </span></h2>
+      <p class="role pb-3 sm:py-3">JUNIOR FRONTEND DEVELOPER</p>
 
-      <div class="divider block w-40 h-0.5 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+      <div class="divider mx-auto sm:mx-0 block w-40 h-0.5 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
 
       <div class="contacts block pt-5">
-        <div class="flex pb-3">
-          <div class="location flex items-center pe-5">
+        <div class="flex justify-center sm:justify-start pb-3">
+          <div class="flex items-center pe-2 md:pe-5">
             <svg class="w-5 h-5 text-blue-500 transition-colors duration-300 ease-in"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 395.71 395.71" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"></path> </g> </g></svg>         
             <span class="ps-1">Varna</span>
           </div>
       
-          <div class="location flex items-center pe-5">
+          <div class="flex items-center pe-2 md:pe-5">
             <svg class="w-5 h-5 text-blue-500 transition-colors duration-300 ease-in" [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
@@ -28,15 +28,15 @@
           
         </div>
 
-        <div class="flex">
-          <div class="location flex items-center pe-5">
+        <div class="flex justify-center sm:justify-start">
+          <div class="flex items-center pe-2 md:pe-5">
             <svg class="w-5 h-5 text-blue-500 transition-colors duration-300 ease-in" [ngStyle]="{'color': colorService.getColor()}" fill="currentColor"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
             <span class="ps-1 ">
               <a target="_blank" href="https://github.com/satanasova">github.com/satanasova</a>
             </span>
           </div>  
   
-          <div class="location flex items-center pe-5">
+          <div class="flex items-center pe-2 md:pe-5">
             <svg class="w-5 h-5 text-blue-500 transition-colors duration-300 ease-in" [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
             </svg>
