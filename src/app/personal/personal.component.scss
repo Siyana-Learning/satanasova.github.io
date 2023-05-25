@@ -6,23 +6,45 @@ section {
   //     // height: calc(9rem + 4vw);
   //   }
   // }
+  .avatar.shape-outer {
+    @media screen and (min-width: 500px) and (max-width: 640px) {
+      width: 9rem;
+      height: 9rem;
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+  }
 
   &.minimized {
     .section-content {
       padding-top: .5rem;
       padding-bottom: .5rem;
+      justify-content: start;
+
 
       .avatar.shape-outer {
         width: 6rem;
         height: 6rem;
         margin-left: 1.25rem;
         margin-right: 1.25rem;
+
+        @media screen and (max-width: 640px) {
+          width: 4rem;
+          height: 4rem;
+          margin-left: .5rem;
+          margin-right: .5rem;
+        }
         
       }
 
       .personal-info {
+        text-align: left;
+
         h2 {
-          font-size: 1.8rem;
+          font-size: 1.875rem;
+          @media screen and (max-width: 640px){
+            font-size: 1.5rem;
+          }
         }
 
         .role {
