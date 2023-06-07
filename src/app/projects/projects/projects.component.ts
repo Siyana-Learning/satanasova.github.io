@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Project } from './models';
 import { BehaviorSubject } from 'rxjs';
 import { ProjectsService } from '../projects.service';
+import { ColorService } from 'src/app/utils/color.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,17 +13,10 @@ export class ProjectsComponent implements OnInit {
   @Input() projects: Project[] = [];
   activeProjectIndex: number = 0;
 
-  constructor() { 
+  constructor(public colorService: ColorService) { 
   }
 
   ngOnInit(): void {
-    console.log(this.projects);
-  }
-
-  prev() {
-  }
-
-  next() {
   }
 
   changeProjectIndex(activeProjectIdx: any) {

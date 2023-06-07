@@ -10,7 +10,7 @@ import { Observable, combineLatest, concatMap, fromEvent, interval, tap, throttl
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  projects: Project[];
+  projects: Project[] = [];
   showMinHeader: boolean = false;
 
   scrollObs = fromEvent(window, 'scroll');
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   // intervalObs = timer(0,3000)
   
   constructor(private projectsService: ProjectsService, private colorService: ColorService) {
-    this.projects = this.projectsService.getProjects();
   }
-
-  ngOnInit(): void {
+  
+  async ngOnInit() {
+    this.projects = await this.projectsService.getProjects();
     this.scrollObs.subscribe((data) => {
       this.showMinHeader = window.scrollY > 50
     })

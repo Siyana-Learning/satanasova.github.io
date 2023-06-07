@@ -30,9 +30,9 @@
             </svg>
              View Certificate
           </a>
-          <div [ngClass]="!lifeEvent.certificate.show ? 'hidden-modal' : '' " class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
+          <div (click)="lifeEvent.certificate.show = false" [ngClass]="!lifeEvent.certificate.show ? 'hidden-modal' : '' " class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
             <img class="max-h-full" [src]="lifeEvent.certificate.src" alt="">
-            <svg (click)="lifeEvent.certificate.show = false" class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <svg class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
             </svg>
           </div>
@@ -74,11 +74,24 @@
     </div>
 
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed neque animi ullam earum aliquid illum accusantium necessitatibus reprehenderit fugit harum nesciunt officiis, itaque quaerat commodi laudantium blanditiis, ipsa maxime. Quae!
-      Molestiae excepturi voluptatem qui? Enim officiis veniam vitae repellendus natus ad unde rem illum quis voluptas corporis commodi optio magni veritatis ipsum mollitia recusandae, consequatur fugit aspernatur impedit! Vitae, alias!
+      Motivated and enthusiastic front-end developer with three years of self-education and practical experience. 
+      Throughout my journey, I have developed a strong foundation in HTML, CSS and JavaScript, allowing me to create clean and responsive web designs. 
+      I am deeply passionate about crafting visually appealing and user-friendly interfaces that enhance the overall web experience.
+    </p>
+    <p>
+      In addition to my core skills, I have also delved into advanced topics such as Sass and front-end frameworks like Angular. 
+      This training has provided me with a solid understanding of scalable CSS architectures and the ability to build dynamic and interactive web applications.
+    </p>
+    <p>
+      With a keen eye for detail and a commitment to delivering high-quality results, I approach every project with enthusiasm and a desire to exceed expectations. 
+      I enjoy working in collaborative environments and embrace the opportunity to learn from experienced developers.
+    </p>
+    <p>
+      As a junior front-end developer, I am eager to contribute my skills and creativity to projects that push boundaries and leave a lasting impact. 
+      I am confident in my ability to adapt quickly, learn new technologies, and work seamlessly within a team.
     </p>
 
-    <ul class="max-w-md space-y-1 list-inside py-3 relative left-1.5">
+    <!-- <ul class="max-w-md space-y-1 list-inside py-3 relative left-1.5">
       <li class="flex items-center ms-3" >
         <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
@@ -91,9 +104,8 @@
         <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
         Ipsum dolor sit amet, consectetur adipisicing elit. 
       </li>
-    </ul>
+    </ul> -->
 
-    <p>Ullam in esse, cum aliquam nostrum voluptate harum molestias corrupti aut neque consequatur iure, autem delectus dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit facilis similique quasi minus aspernatur accusamus illum voluptatem dicta explicabo nesciunt atque, mollitia, unde, accusantium magnam nemo possimus quidem laborum architecto.</p>
 
   </div>
   

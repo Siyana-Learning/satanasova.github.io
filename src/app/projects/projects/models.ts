@@ -1,5 +1,5 @@
 export type Project = {
-  src: string;
+  url: string;
   description: ProjectDescription;
   showFrame?: boolean,
 }

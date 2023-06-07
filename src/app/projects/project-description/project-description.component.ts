@@ -11,7 +11,6 @@ export class ProjectDescriptionComponent implements OnInit {
   @Input() projects: Project[] = []
   @Input() activeProjectIndex: number = 0
   projectDescription: any = '';
-  color: string = 'blue-500'
 
 
   constructor(public colorService: ColorService) {
@@ -21,7 +20,4 @@ export class ProjectDescriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getColor() {
-    return this.color
-  }
 }

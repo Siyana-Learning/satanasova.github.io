@@ -6,6 +6,7 @@ import { UtilsModule } from '../utils/utils.module';
 import { ProjectsSliderComponent } from './projects-slider/projects-slider.component';
 import { ProjectPreviewComponent } from './project-preview/project-preview.component';
 import { ProjectDescriptionComponent } from './project-description/project-description.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +19,8 @@ import { ProjectDescriptionComponent } from './project-description/project-descr
   ],
   imports: [
     CommonModule,
-    UtilsModule
+    UtilsModule,
+    HttpClientModule
   ], 
   exports: [ ProjectsComponent ]
 })
