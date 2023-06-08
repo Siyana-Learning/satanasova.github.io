@@ -5,7 +5,8 @@
       "title":"Delivery App",
       "usedTech":["angular","sass","tailwind"],
       "descriptionText":"Delivery App is a web application designed for efficient delivery management, featuring user authentication, chat functionality, customizable theme settings, interactive tables, along with a comprehensive dashboard equipped with an interactive map. The map allows users to click on offices to view detailed information such as package count and incoming/outgoing truck details, and also enables users to track individual truck routes for enhanced logistics visibility. Developed with Angular and Nebular UI Library, this application is designed to be scalable, visually appealing, and user-friendly."
-    }
+    },
+    "responsive": false
   },
   {
     "url":"https://satanasova.github.io/UD-final-task/",
@@ -28,15 +29,15 @@
     "description":{
       "title":"Angular Reddit",
       "usedTech":["angular","sass"],
-      "descriptionText":"Angular Reddit desc"
+      "descriptionText":"Angular Reddit is a web application that allows the user to post an article (with a title and a URL) and then vote on the posts. This project is part of a series of practical exercises and projects undertaken during my self-educating through the study of Nate Murray's ng-book - The Complete Guide to Angular 2020."
     }
   },
   {
     "url":"https://satanasova.github.io/UD-Ideogen/",
     "description":{
       "title":"UD Ideogen",
-      "usedTech":["html","sass","jquery"],
-      "descriptionText":"UD Ideogen desc"
+      "usedTech":["html","sass","bootstrap","jquery"],
+      "descriptionText":"UD Ideogen is a web application developed during my internship at Innovator Varna, showcasing an innovative and visually stunning user interface."
     }
   },
   {
@@ -44,7 +45,7 @@
     "description":{
       "title":"UD Drag & Drop",
       "usedTech":["html","sass","jquery"],
-      "descriptionText":"UD Drag & Drop desc"
+      "descriptionText":"UD Drag & Drop a small web application developed during my internship at Innovator Varna. This project allows users to effortlessly create and organize navigation tabs by providing a user-friendly interface for adding titles and URLs. With the ability to intuitively reorder tabs using drag and drop functionality, users can easily customize the navigation structure according to their preferences. Additionally, the app offers the convenience of nesting tabs, enabling users to create hierarchical navigation menus for enhanced organization."
     }
   },
   {
@@ -52,7 +53,7 @@
     "description":{
       "title":"Decoracion Azul",
       "usedTech":["html","sass","js"],
-      "descriptionText":"Decoracion Azul desc"
+      "descriptionText":"Decoracion Azul an internship project from Innovator Varna. A simple blog page with articles, filterable by topic and one internal article page."
     }
   },
   {
@@ -69,7 +70,8 @@
       "title":"Design Contest",
       "usedTech":["html","sass","js"],
       "descriptionText":"Design Contest desc"
-    }
+    },
+    "responsive": "false"
   },
   {
     "url":"https://satanasova.github.io/AA-Page-Task/",

@@ -1,7 +1,8 @@
 export type Project = {
   url: string;
   description: ProjectDescription;
-  showFrame?: boolean,
+  showFrame?: boolean;
+  responsive?: boolean
 }
 
 export type ProjectDescription = {

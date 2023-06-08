@@ -1,4 +1,4 @@
 <div class="cont  items-center justify-between w-full overflow-hidden bg-gray-900 text-gray-200">
-  <app-projects-slider class="w-full" (activeProjectChanged)="changeProjectIndex($event)" [projects]="projects" [activeProjectIndex]="activeProjectIndex" ></app-projects-slider>
+  <app-projects-slider class="w-full" (deviceTypeChanged)="changeDeviceType($event)" (activeProjectChanged)="changeProjectIndex($event)" [projects]="projects" [activeProjectIndex]="activeProjectIndex" ></app-projects-slider>
   <app-project-description class="w-1/3" [projects]="projects" [activeProjectIndex]="activeProjectIndex"></app-project-description>
 </div>

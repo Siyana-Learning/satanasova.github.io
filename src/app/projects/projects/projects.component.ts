@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from './models';
-import { BehaviorSubject } from 'rxjs';
-import { ProjectsService } from '../projects.service';
+import { DeviceType, Project } from './models';
 import { ColorService } from 'src/app/utils/color.service';
 
 @Component({
@@ -13,6 +11,8 @@ export class ProjectsComponent implements OnInit {
   @Input() projects: Project[] = [];
   activeProjectIndex: number = 0;
 
+  deviceType: DeviceType = DeviceType.PHONE;
+
   constructor(public colorService: ColorService) { 
   }
 
@@ -22,4 +22,17 @@ export class ProjectsComponent implements OnInit {
   changeProjectIndex(activeProjectIdx: any) {
     this.activeProjectIndex = activeProjectIdx
   }
+
+  changeDeviceType(deviceType: any) {
+    this.deviceType = deviceType;
+  }
+
+  // getProjects() {
+  //   console.log('get projects device type', this.deviceType);
+  //   if(this.deviceType != DeviceType.LAPTOP) {
+  //     return this.projects.filter((project: Project) => project.responsive || !project.hasOwnProperty('responsive'));
+  //   } else {
+  //     return this.projects
+  //   }
+  // }
 }
