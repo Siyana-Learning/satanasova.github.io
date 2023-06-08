@@ -1,0 +1,93 @@
+[
+  {
+    "url":"https://satanasova.github.io/delivery-app-frontend/",
+    "description":{
+      "title":"Delivery App",
+      "usedTech":["angular","sass","tailwind"],
+      "descriptionText":"Delivery App is a web application designed for efficient delivery management, featuring user authentication, chat functionality, customizable theme settings, interactive tables, along with a comprehensive dashboard equipped with an interactive map. The map allows users to click on offices to view detailed information such as package count and incoming/outgoing truck details, and also enables users to track individual truck routes for enhanced logistics visibility. Developed with Angular and Nebular UI Library, this application is designed to be scalable, visually appealing, and user-friendly."
+    },
+    "responsive": false
+  },
+  {
+    "url":"https://satanasova.github.io/UD-final-task/",
+    "description":{
+      "title":"Rolso",
+      "usedTech":["pug","sass","bootstrap","jquery","figma"],
+      "descriptionText":"Rolso is an user-friendly web application I developed during my internship program at Innovator, Varna. Leveraging the power of Pug, Sass, Bootstrap, and jQuery, the project features 16 thoughtfully crafted pages. Guided by a Figma design, Rolso delivers an engaging user experience with dynamic elements and visually appealing interfaces. It showcases my proficiency in web development, combining advanced technologies with a meticulous design approach to create a modern and functional application."
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/photo-cutter/",
+    "description":{
+      "title":"Photo Cutter",
+      "usedTech":["html","sass","js"],
+      "descriptionText":"Photo Cutter is a tool I developed for personal use. It allows you to effortlessly crop your photos into a circular shape without compromising their quality. With just a few buttons and a resizing range, you can easily adjust the size of the circular crop to achieve the desired composition."
+    }
+  },
+  {
+    "url":"https://angular-reddit-liart-two.vercel.app//",
+    "description":{
+      "title":"Angular Reddit",
+      "usedTech":["angular","sass"],
+      "descriptionText":"Angular Reddit is a web application that allows the user to post an article (with a title and a URL) and then vote on the posts. This project is part of a series of practical exercises and projects undertaken during my self-educating through the study of Nate Murray's ng-book - The Complete Guide to Angular 2020."
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/UD-Ideogen/",
+    "description":{
+      "title":"UD Ideogen",
+      "usedTech":["html","sass","bootstrap","jquery"],
+      "descriptionText":"UD Ideogen is a web application developed during my internship at Innovator Varna, showcasing an innovative and visually stunning user interface."
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/UD-drag-n-drop/",
+    "description":{
+      "title":"UD Drag & Drop",
+      "usedTech":["html","sass","jquery"],
+      "descriptionText":"UD Drag & Drop a small web application developed during my internship at Innovator Varna. This project allows users to effortlessly create and organize navigation tabs by providing a user-friendly interface for adding titles and URLs. With the ability to intuitively reorder tabs using drag and drop functionality, users can easily customize the navigation structure according to their preferences. Additionally, the app offers the convenience of nesting tabs, enabling users to create hierarchical navigation menus for enhanced organization."
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/Decoracion-Azul/",
+    "description":{
+      "title":"Decoracion Azul",
+      "usedTech":["html","sass","js"],
+      "descriptionText":"Decoracion Azul an internship project from Innovator Varna. A simple blog page with articles, filterable by topic and one internal article page."
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/TC-Page-Task/",
+    "description":{
+      "title":"Modus Versus",
+      "usedTech":["html","sass","js"],
+      "descriptionText":"Modus Versus desc"
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/TC-Page-Task-2/",
+    "description":{
+      "title":"Design Contest",
+      "usedTech":["html","sass","js"],
+      "descriptionText":"Design Contest desc"
+    },
+    "responsive": "false"
+  },
+  {
+    "url":"https://satanasova.github.io/AA-Page-Task/",
+    "description":{
+      "title":"AA Page Task",
+      "usedTech":["html","sass"],
+      "descriptionText":"AA Page Task desc"
+    }
+  },
+  {
+    "url":"https://satanasova.github.io/AA-JS-Task/",
+    "description":{
+      "title":"AA JS Task",
+      "usedTech":["html","sass","js"],
+      "descriptionText":"AA JS Task desc"
+    }
+  }
+  
+]
