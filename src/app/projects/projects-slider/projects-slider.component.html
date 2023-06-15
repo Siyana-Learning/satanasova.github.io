@@ -19,8 +19,8 @@
     </button>
 </div>
 
-<div class="slider w-full flex bg-gray-900" #slider>
-  <app-project-preview class="transition-all duration-500 ease-in bg-gray-700 rounded-3xl" [ngClass]="['index-' + getDistance(i), deviceType.name]" *ngFor="let project of projects; let i = index" [ngStyle]="getProjectStyling(projects, i)" [deviceWidth]="deviceType.width" [deviceHeight]="deviceType.height" [iframeSrc]="project.src" [showFrame]="false" [text]="i + ''"></app-project-preview>
+<div class="slider w-full flex bg-gray-900 relative" #slider>
+  <app-project-preview class="transition-all duration-500 ease-in bg-gray-700 rounded-3xl" [ngClass]="['index-' + getDistance(i), deviceType.name]" *ngFor="let project of projects; let i = index" [ngStyle]="getProjectStyling(projects, i)" [deviceWidth]="deviceType.width" [deviceHeight]="deviceType.height" [iframeSrc]="project.url" [showFrame]="false" [text]="i + ''"></app-project-preview>
 </div>
 
 <div class="buttons absolute bottom-0 my-3">

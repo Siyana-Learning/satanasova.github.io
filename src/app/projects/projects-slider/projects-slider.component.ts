@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DeviceType, Project } from '../projects/models';
 import { ColorService } from 'src/app/utils/color.service';
-import { Observable, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-projects-slider',
@@ -9,52 +8,24 @@ import { Observable, fromEvent } from 'rxjs';
   styleUrls: ['./projects-slider.component.scss']
 })
 export class ProjectsSliderComponent implements OnInit, AfterViewInit {
-  
-
   @ViewChild('slider') sliderContainer?: any;
 
   @Input() projects: Project[] = []; 
   @Input() activeProjectIndex: number = 0;
 
   @Output() activeProjectChanged: EventEmitter<number> = new EventEmitter();
+  @Output() deviceTypeChanged: EventEmitter<DeviceType> = new EventEmitter();
 
   deviceType: DeviceType = DeviceType.PHONE;
   // resizeObservable: Observable<Event> = fromEvent(window, 'resize');
-  sliderContainerWidth: number = 0;
-
-  defaultTouch = { x: 0, time: 0 };
-
-  @HostListener('touchstart', ['$event'])
-  @HostListener('touchend', ['$event'])
-  handleTouch(event: any) {
-    let touch = event.touches[0] || event.changedTouches[0];
-  
-    if (event.type === 'touchstart') {
-      this.defaultTouch.x = touch.pageX;
-      this.defaultTouch.time = event.timeStamp;
-    } else if (event.type === 'touchend') {
-        let deltaX = touch.pageX - this.defaultTouch.x;
-        let deltaTime = event.timeStamp - this.defaultTouch.time;
-
-        if (deltaTime < 500) {
-            if (Math.abs(deltaX) > 60) {
-                if (deltaX > 0) {
-                    this.prev();
-                } else {
-                    this.next();
-                }
-            }
-        }
-    } 
-
-  }
+  sliderContainerHeight: number = 800;
 
   constructor(public colorService: ColorService) { }
 
   ngAfterViewInit(): void {
-    if(this.sliderContainer){
-      this.sliderContainerWidth = this.sliderContainer.nativeElement.clientWidth
-    }
+    // if(this.sliderContainer){
+    //   this.sliderContainerWidth = this.sliderContainer.nativeElement.clientWidth
+    // }
 
     // this.resizeObservable.subscribe(() => {
     //   this.sliderContainerWidth = this.sliderContainer.nativeElement.clientWidth;
@@ -63,8 +34,12 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
- 
-   }
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(event: any) {
+      console.log('receiveMessage', event, event.data);
+    }
+  }
 
   prev() {
     if (this.activeProjectIndex > 0) {
@@ -84,62 +59,50 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
   
   getProjectStyling(projects: Project[], i: number) {
     const style: any = {};
-    const transform: string[] = [];
-    const indexDistance = i - this.activeProjectIndex
-    const scale = (this.sliderContainerWidth*0.6)/this.deviceType.width
-    // console.log('container', this.sliderContainerWidth);
-    // console.log('device', this.deviceType.width);
+    let transform: string = '';
+    let scale: number = 0;
+    let left: number = 0;
+    let top: number = 0;
+    let activeProjectZoomFactor = 1.3;
+    let rotate: string = '';
+    let defaultDeviceScale = 1;
+    const indexDistance = i - this.activeProjectIndex;
 
-    this.getDevicePosition(this.sliderContainerWidth)
-
-    // transform.push(`translateX(${indexDistance * this.deviceType.width/3}px)`)
-    // transform.push(`rotate(${indexDistance*25}deg)`)
-
-    if (i === this.activeProjectIndex) {
-      // transform.push('scale(0.7)')
-      let deviceStyle = ''
-      switch(this.deviceType.name) {
-        // case 'phone':  deviceStyle = `scale(${this.sliderContainerWidth < this.deviceType.width ? scale : 0.7})`; break;
-        // case 'tablet':  deviceStyle = `scale(${this.sliderContainerWidth < this.deviceType.width ? scale : 0.6})`; break;
-        // case 'laptop':  deviceStyle = `scale(${this.sliderContainerWidth < this.deviceType.width ? scale : 0.5}) translateX(${this.deviceType.width*scale - this.deviceType.width}px)`; break;
-        // case 'phone':  deviceStyle = `scale(0.7)`; break;
-        case 'phone':  deviceStyle = `scale(0.7) translateX(${this.deviceType.width/2}px)`; break;
-        // case 'tablet':  deviceStyle = `scale(0.6)`; break;
-        case 'tablet':  deviceStyle = `scale(0.6) translateY(${-this.deviceType.height/4}px) `; break;
-        // case 'laptop':  deviceStyle = `scale(0.5)`; break;
-        case 'laptop':  deviceStyle = `scale(0.5) translateX(${-this.deviceType.width/3}px)`; break;
-        default:  deviceStyle = 'scale(0.7)';
-      }
-
-      transform.push(deviceStyle)
-      
-    } else {
-      // transform.push('scale(0.5)')
-      let deviceStyle = ''
-      switch(this.deviceType.name) {
-        // case 'phone':  deviceStyle = `scale(0.5) translateX(${-this.deviceType.width * indexDistance}px) rotate(${indexDistance * 25}deg)`; break;
-        // case 'tablet':  deviceStyle = `scale(0.4) translateX(${-this.deviceType.width * 1.5 * indexDistance}px) rotate(${indexDistance * 25}deg)`; break;
-        // case 'laptop':  deviceStyle = `scale(0.3) translateX(${-this.deviceType.width * indexDistance}px) rotate(${indexDistance * 10}deg)`; break;
-        case 'phone':  deviceStyle = `scale(0.5) translateX(${indexDistance * this.deviceType.width + this.deviceType.width/2}px) rotate(${indexDistance*25}deg)`; break;
-        case 'tablet':  deviceStyle = `scale(0.4) translateX(${indexDistance * this.deviceType.width/1.5}px) rotate(${indexDistance*30}deg) translateY(${-this.deviceType.height/2.5}px)`; break;
-        case 'laptop':  deviceStyle = `scale(0.3) translateX(${indexDistance > 0 ? indexDistance * this.deviceType.width/2 : indexDistance * this.deviceType.width - this.deviceType.width/3}px) rotate(${indexDistance*10}deg)`; break;
-        default:  deviceStyle = 'scale(0.5)';
-      }
-
-      transform.push(deviceStyle)
-
+    switch (this.deviceType.name) {
+      case 'phone': scale = 0.55; break;
+      case 'tablet': scale = 0.45; break;
+      case 'laptop': scale = 0.35; break;
     }
 
-    switch(indexDistance) {
+    scale *= 0.5
+    
+    if (this.activeProjectIndex === i) {
+      scale *= activeProjectZoomFactor;
+    } 
+    
+    left = indexDistance * (this.deviceType.width*scale) - (this.deviceType.width - this.deviceType.width*scale)/2;
+    top = -(this.deviceType.height - this.deviceType.height*scale)/2;
 
+    if(i > this.activeProjectIndex) {
+      left +=  this.deviceType.width * scale * (activeProjectZoomFactor - 1);
     }
 
-    style.transform = transform.join(' ');
+    // if (this.activeProjectIndex !== i) {
+    //   top += (this.deviceType.height * scale * (activeProjectZoomFactor -1))/2
+    // }
+
+    top += Math.round((this.sliderContainerHeight - this.deviceType.height*scale)/2);
+
+
+    // cover case for active device
+  
+    style.scale = scale;
+    style.left = left +'px';
+    style.top = top + 'px';
+    // style.rotate = rotate;
     style.opacity = indexDistance <= 3 ? 1 : 0;
     style.zIndex = 49 - Math.abs(indexDistance * 10)
     style.filter = `blur(${Math.abs(indexDistance)*2}px)`;
- 
-    // console.log(transform)
 
     return style
   }
@@ -150,6 +113,7 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
 
   changeDeviceWidth(device: string) {
     this.deviceType = (DeviceType as any)[device];
+    this.deviceTypeChanged.emit(this.deviceType as any);
     // this.deviceWidth = 
     // console.log(this.deviceWidth);
   }
@@ -168,9 +132,4 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
     
   }
 
- 
 }
-
-
-
-

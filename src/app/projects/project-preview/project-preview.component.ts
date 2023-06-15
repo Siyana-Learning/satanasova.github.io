@@ -28,5 +28,4 @@ export class ProjectPreviewComponent implements OnInit, OnChanges {
   
   ngOnInit(): void {
   }
-
 }
