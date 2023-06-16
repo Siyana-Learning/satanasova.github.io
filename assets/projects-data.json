@@ -77,7 +77,7 @@
     "url":"https://satanasova.github.io/AA-Page-Task/",
     "description":{
       "title":"Best Apps",
-      "usedTech":["html","sass"],
+      "usedTech":["html","bootstrap","sass"],
       "descriptionText":"Best Apps is a simple responsive web page. It features two automatic sliders and a contact form. The sliders automatically display different images or content, providing a visually appealing and dynamic experience for users."
     }
   },
