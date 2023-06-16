@@ -6,7 +6,20 @@
   align-items: center;
   .slider {
     height: 800px;
-    // box-shadow: inset -100px 0px 40px -40px white;
+
+    @media screen and (max-width: 875px) {
+      height: 650px;
+    }
+    @media screen and (max-width: 425px) {
+      height: 400px;
+    }
+
+  }
+
+  .nav-buttons {
+    button {
+      border-width: 3px;
+    }
   }
 
 }
@@ -15,27 +28,8 @@
 
   &[class*="index"] .device{
     opacity: 0;
-    // transition: all 1s ease;
   }
   &.index-0 {
-    &.phone {
-      @media screen and (max-width: 360px) {
-        transform: scale(0.7) translateY(-7%) !important;
-      }
-    }
-
-    &.tablet {
-      @media screen and (max-width: 360px) {
-        transform: scale(0.4) translate(-65%, -45%) !important;
-      }
-    }
-
-    &.laptop {
-      @media screen and (max-width: 360px) {
-        transform: scale(0.25) translate(-146%, -25%) !important;
-      }
-    }
-
     .device{
       opacity: 1;
     }
@@ -53,23 +47,3 @@
       opacity: 0.4;
   }
 }
-
-
-
-// @media (max-width:900px) {
-//   .container {
-//     transform: scale(0.8, 0.8);
-//   }
-// }
-
-// @media (max-width:700px) {
-//   .container {
-//     transform: scale(0.6, 0.6);
-//   }
-// }
-
-// @media (max-width:500px) {
-//   .container {
-//     transform: scale(0.4, 0.4);
-//   }
-// }
