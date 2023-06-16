@@ -1,13 +1,5 @@
 [
   {
-    "url":"https://satanasova.github.io/",
-    "description":{
-      "title":"Portfolio",
-      "usedTech":["angular","sass","tailwind"],
-      "descriptionText":"Delivery App is a responsive web application designed for efficient delivery management, featuring user authentication, chat functionality, customizable theme settings, interactive tables, along with a comprehensive dashboard equipped with an interactive map. The map allows users to click on offices to view detailed information such as package count and incoming/outgoing truck details, and also enables users to track individual truck routes for enhanced logistics visibility. Developed with Angular and Nebular UI Library, this application is designed to be scalable, visually appealing, and user-friendly."
-    }
-  },
-  {
     "url":"https://satanasova.github.io/delivery-app-frontend/",
     "description":{
       "title":"Delivery App",
