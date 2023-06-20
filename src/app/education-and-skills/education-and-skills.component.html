@@ -54,58 +54,57 @@
     </h2>
     <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
-    <div class="tech-icons flex flex-wrap justify-center sm:justify-between md:justify-center lg:justify-between pb-3">
-      <span class="text-3xl icon-html"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span class="text-3xl icon-pug"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span></span>  
-      <span class="text-3xl icon-css"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span class="text-3xl icon-sass"></span>
-      <span class="text-3xl icon-bootstrap"></span>
-      <span class="text-3xl icon-tailwind"></span>
-      <span class="text-3xl icon-js"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span class="text-3xl icon-ts"></span>
-      <span class="text-3xl icon-jquery"></span>
-      <span class="text-3xl icon-angular"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span class="text-3xl icon-npm"></span>
-      <span class="text-3xl icon-postman"></span>
-      <span class="text-3xl icon-github-black"></span>
-      <span class="text-3xl icon-ps"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
-      <span class="text-3xl icon-figma"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
-      <span class="text-3xl icon-vscode"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+    <ul class="text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-5">
+      <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg flex items-center">
+        <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Templating</span>
+        <span class="pe-2.5 text-3xl icon-html"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+        <span class="pe-2.5 text-3xl icon-pug"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span></span>  
+      </li>
+      <li class="w-full px-4 py-2 border-b border-gray-200 flex items-center">
+        <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Styling</span>
+        <span class="pe-2.5 text-3xl icon-css"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>  
+        <span class="pe-2.5 text-3xl icon-sass"></span>
+        <span class="pe-2.5 text-3xl icon-bootstrap"></span>
+        <span class="pe-2.5 text-3xl icon-tailwind"></span>
+      </li>
+      <li class="w-full px-4 py-2 border-b border-gray-200 flex items-center">
+        <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Scripting</span>
+        <span class="pe-2.5 text-3xl icon-js"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+        <span class="pe-2.5 text-3xl icon-ts"></span>
+        <span class="pe-2.5 text-3xl icon-jquery"></span>
+        <span class="pe-2.5 text-3xl icon-angular"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+        </li>
+      <li class="w-full px-4 py-2 rounded-b-lg flex items-center">
+        <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Tools</span>
+        <span class="pe-2.5 text-3xl icon-npm"></span>
+        <span class="pe-2.5 text-3xl icon-postman"></span>
+        <span class="pe-2.5 text-3xl icon-github-black"></span>
+        <span class="pe-2.5 text-3xl icon-vscode"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>  
+        <span class="pe-2.5 text-3xl icon-ps"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+        <span class="pe-2.5 text-3xl icon-figma"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+      </li>
+    </ul>
+
+
+    <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow">
+      <p class="font-normal pb-2.5">
+        Motivated and enthusiastic front-end developer with three years of self-education and practical experience. 
+        Throughout my journey, I have developed a strong foundation in HTML, CSS and JavaScript, allowing me to create clean and responsive web designs. 
+        I am deeply passionate about crafting visually appealing and user-friendly interfaces that enhance the overall web experience.  
+      </p>
+      <p class="font-normal pb-2.5">
+        In addition to my core skills, I have also delved into advanced topics such as Sass and front-end frameworks like Angular. 
+      </p>
+      <p class="font-normal pb-2.5">
+        With a keen eye for detail and a commitment to delivering high-quality results, I approach every project with enthusiasm and a desire to exceed expectations. 
+        I enjoy working in collaborative environments and embrace the opportunity to learn from experienced developers.
+      </p>
+      <p class="font-normal">
+        As a junior front-end developer, I am eager to contribute my skills and creativity to projects that push boundaries and leave a lasting impact. 
+        I am confident in my ability to adapt quickly, learn new technologies, and work seamlessly within a team.
+      </p>
+  
     </div>
-
-    <p>
-      Motivated and enthusiastic front-end developer with three years of self-education and practical experience. 
-      Throughout my journey, I have developed a strong foundation in HTML, CSS and JavaScript, allowing me to create clean and responsive web designs. 
-      I am deeply passionate about crafting visually appealing and user-friendly interfaces that enhance the overall web experience.
-    </p>
-    <p>
-      In addition to my core skills, I have also delved into advanced topics such as Sass and front-end frameworks like Angular. 
-      This training has provided me with a solid understanding of scalable CSS architectures and the ability to build dynamic and interactive web applications.
-    </p>
-    <p>
-      With a keen eye for detail and a commitment to delivering high-quality results, I approach every project with enthusiasm and a desire to exceed expectations. 
-      I enjoy working in collaborative environments and embrace the opportunity to learn from experienced developers.
-    </p>
-    <p>
-      As a junior front-end developer, I am eager to contribute my skills and creativity to projects that push boundaries and leave a lasting impact. 
-      I am confident in my ability to adapt quickly, learn new technologies, and work seamlessly within a team.
-    </p>
-
-    <!-- <ul class="max-w-md space-y-1 list-inside py-3 relative left-1.5">
-      <li class="flex items-center ms-3" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
-      </li>
-      <li class="flex items-center ms-3" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
-        Dolor sit amet, consectetur adipisicing elit. 
-      </li>
-      <li class="flex items-center ms-3" >
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute -left-1.5 w-3 h-3 rounded-full mr-2 border border-white transition-colors duration-300 ease-in"></div>
-        Ipsum dolor sit amet, consectetur adipisicing elit. 
-      </li>
-    </ul> -->
-
 
   </div>
   
