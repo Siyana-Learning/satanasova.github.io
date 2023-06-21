@@ -18,9 +18,9 @@
   {
     "url":"https://satanasova.github.io/UD-Ideogen/",
     "description":{
-      "title":"UD Ideogen",
+      "title":"Ideogen",
       "usedTech":["html","sass","bootstrap","jquery"],
-      "descriptionText":"UD Ideogen is a responsive web application developed during my internship at Innovator Varna, showcasing an innovative and visually stunning user interface."
+      "descriptionText":"Ideogen is a responsive web application developed during my internship at Innovator Varna, showcasing an innovative and visually stunning user interface."
     }
   },
   {
@@ -34,9 +34,9 @@
   {
     "url":"https://satanasova.github.io/UD-drag-n-drop/",
     "description":{
-      "title":"UD Drag & Drop",
+      "title":"Drag & Drop",
       "usedTech":["html","sass","jquery"],
-      "descriptionText":"UD Drag & Drop is a small responsive web application developed during my internship at Innovator Varna. This project allows users to effortlessly create and organize navigation tabs by providing a user-friendly interface for adding titles and URLs. With the ability to intuitively reorder tabs using drag and drop functionality, users can easily customize the navigation structure according to their preferences. Additionally, the app offers the convenience of nesting tabs, enabling users to create hierarchical navigation menus for enhanced organization."
+      "descriptionText":"Drag & Drop is a small responsive web application developed during my internship at Innovator Varna. This project allows users to effortlessly create and organize navigation tabs by providing a user-friendly interface for adding titles and URLs. With the ability to intuitively reorder tabs using drag and drop functionality, users can easily customize the navigation structure according to their preferences. Additionally, the app offers the convenience of nesting tabs, enabling users to create hierarchical navigation menus for enhanced organization."
     }
   },
   {
