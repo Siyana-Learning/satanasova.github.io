@@ -1,5 +1,6 @@
 export type Project = {
   url: string;
+  src: string;
   description: ProjectDescription;
   showFrame?: boolean;
   responsive?: boolean

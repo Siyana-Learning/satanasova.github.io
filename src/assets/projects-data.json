@@ -1,6 +1,7 @@
 [
   {
     "url":"https://satanasova.github.io/delivery-app-frontend/",
+    "src":"https://github.com/satanasova/delivery-app-frontend",
     "description":{
       "title":"Delivery App",
       "usedTech":["angular","sass"],
@@ -9,6 +10,7 @@
   },
   {
     "url":"https://angular-reddit-liart-two.vercel.app//",
+    "src":"https://github.com/satanasova/angular-reddit",
     "description":{
       "title":"Angular Reddit",
       "usedTech":["angular","sass"],
@@ -17,6 +19,7 @@
   },
   {
     "url":"https://satanasova.github.io/UD-Ideogen/",
+    "src":"https://github.com/satanasova/UD-Ideogen",
     "description":{
       "title":"Ideogen",
       "usedTech":["html","sass","bootstrap","jquery"],
@@ -25,6 +28,7 @@
   },
   {
     "url":"https://satanasova.github.io/UD-final-task/",
+    "src":"https://github.com/satanasova/UD-final-task",
     "description":{
       "title":"Rolso",
       "usedTech":["pug","sass","bootstrap","jquery","figma"],
@@ -33,6 +37,7 @@
   },
   {
     "url":"https://satanasova.github.io/UD-drag-n-drop/",
+    "src":"https://github.com/satanasova/UD-drag-n-drop",
     "description":{
       "title":"Drag & Drop",
       "usedTech":["html","sass","jquery"],
@@ -41,6 +46,7 @@
   },
   {
     "url":"https://satanasova.github.io/Invoice/",
+    "src":"https://github.com/satanasova/Invoice",
     "description":{
       "title":"Invoice",
       "usedTech":["html","bootstrap","sass","jquery"],
@@ -49,6 +55,7 @@
   },
   {
     "url":"https://satanasova.github.io/AA-JS-Task/",
+    "src":"https://github.com/satanasova/AA-JS-Task",
     "description":{
       "title":"AA JS Task",
       "usedTech":["html","sass","js"],
@@ -57,6 +64,7 @@
   },
   {
     "url":"https://satanasova.github.io/photo-cutter/",
+    "src":"https://github.com/satanasova/photo-cutter",
     "description":{
       "title":"Photo Cutter",
       "usedTech":["html","sass","js"],
@@ -65,6 +73,7 @@
   },
   {
     "url":"https://satanasova.github.io/Decoracion-Azul/",
+    "src":"https://github.com/satanasova/Decoracion-Azul",
     "description":{
       "title":"Decoracion Azul",
       "usedTech":["html","sass","js"],
@@ -73,6 +82,7 @@
   },
   {
     "url":"https://satanasova.github.io/AA-Page-Task/",
+    "src":"https://github.com/satanasova/AA-Page-Task",
     "description":{
       "title":"Best Apps",
       "usedTech":["html","bootstrap","sass"],
@@ -81,6 +91,7 @@
   },
   {
     "url":"https://satanasova.github.io/TC-Page-Task/",
+    "src":"https://github.com/satanasova/TC-Page-Task",
     "description":{
       "title":"Modus Versus",
       "usedTech":["html","sass","js"],
@@ -89,6 +100,7 @@
   },
   {
     "url":"https://satanasova.github.io/TC-Page-Task-2/",
+    "src":"https://github.com/satanasova/TC-Page-Task-2",
     "description":{
       "title":"Design Contest",
       "usedTech":["html","sass","js"],

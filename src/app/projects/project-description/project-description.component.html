@@ -20,7 +20,10 @@
     {{projects[activeProjectIndex].description.descriptionText}}
   </p>
 
-  <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" class="text-white font-medium rounded-lg text-xl px-5 py-2.5 mt-5 mb-5" [ngStyle]="{'background-color': colorService.getColor()}">Open project</a>
+  <div class="flex">
+    <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" class="text-white font-medium rounded-lg text-xl px-5 py-2.5 mt-5 mb-5 me-2.5" [ngStyle]="{'background-color': colorService.getColor()}">Open project</a>
+    <a [href]="projects[activeProjectIndex].src" target="_blank" type="button" class="text-white font-medium rounded-lg text-xl px-5 py-2.5 mt-5 mb-5" [ngStyle]="{'background-color': colorService.getColor()}">Open code</a>
+  </div>
 </div>
 
   
