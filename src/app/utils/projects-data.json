@@ -105,8 +105,6 @@
       "title":"Design Contest",
       "usedTech":["html","sass","js"],
       "descriptionText":"Design Contest is a simple web page featuring counters and sliders. The counters dynamically display and animate numerical values, allowing users to track and visualize various metrics. "
-    },
-    "responsive": "false"
+    }
   }
-  
 ]

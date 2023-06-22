@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, find, firstValueFrom } from 'rxjs';
 import { Project } from './projects/models';
 import { HttpClient } from '@angular/common/http';
+import projectsData from '../utils/projects-data.json'
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,13 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectsService {
   projects: Project[] = [ ]
 
-  constructor(private http: HttpClient) {
-    
+  constructor() {
+    this.projects = projectsData;
   }
   
   getProjects() {
-    return firstValueFrom(this.http.get<Project[]>('./assets/projects-data.json'))
+    // return firstValueFrom(this.http.get<Project[]>('./assets/projects-data.json'))
+    return this.projects;
   }
 
 }

@@ -3,7 +3,6 @@ export type Project = {
   src: string;
   description: ProjectDescription;
   showFrame?: boolean;
-  responsive?: boolean
 }
 
 export type ProjectDescription = {
