@@ -33,6 +33,13 @@ export class EducationAndSkillsComponent implements OnInit {
     },
   ];
 
+  techIconGroups: any = [
+    {name: 'Templating', techs: ['html', 'pug']},
+    {name: 'Styling', techs: ['css', 'sass', 'bootstrap', 'tailwind']},
+    {name: 'Scripting', techs: ['js', 'ts', 'jquery', 'angular']},
+    {name: 'Tools', techs: ['npm', 'postman', 'github-black', 'vscode', 'ps', 'figma']},
+  ]
+
   viewInit: boolean = false;
 
   constructor(public colorService: ColorService) { }

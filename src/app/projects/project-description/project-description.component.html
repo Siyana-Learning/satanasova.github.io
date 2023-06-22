@@ -3,26 +3,39 @@
   <div class="divider block w-40 h-0.5 my-2 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
 
   <div class="tech-icons flex">
-    <div *ngFor="let tech of projects[activeProjectIndex].description.usedTech" [ngSwitch]="tech" class="tech-icon">
-      <span *ngSwitchCase="'js'" class="text-3xl icon-js"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span *ngSwitchCase="'angular'" class="text-3xl icon-angular"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span *ngSwitchCase="'css'" class="text-3xl icon-css"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span *ngSwitchCase="'bootstrap'" class="text-3xl icon-bootstrap"></span>
-      <span *ngSwitchCase="'html'" class="text-3xl icon-html"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-      <span *ngSwitchCase="'jquery'" class="text-3xl icon-jquery"></span>
-      <span *ngSwitchCase="'tailwind'" class="text-3xl icon-tailwind"></span>
-      <span *ngSwitchCase="'sass'" class="text-3xl icon-sass"></span>
-      <span *ngSwitchCase="'pug'" class="text-3xl icon-pug"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span><span class="path12"></span><span class="path13"></span><span class="path14"></span><span class="path15"></span><span class="path16"></span><span class="path17"></span><span class="path18"></span><span class="path19"></span><span class="path20"></span><span class="path21"></span><span class="path22"></span><span class="path23"></span><span class="path24"></span><span class="path25"></span><span class="path26"></span><span class="path27"></span><span class="path28"></span><span class="path29"></span><span class="path30"></span><span class="path31"></span><span class="path32"></span><span class="path33"></span><span class="path34"></span><span class="path35"></span><span class="path36"></span></span>  
-      <span *ngSwitchCase="'figma'" class="text-3xl icon-figma"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
-    </div>  
+    <div *ngFor="let techIcon of projects[activeProjectIndex].description.usedTech">
+      <img  [src]="'./assets/svg/tech-icons/' + techIcon + '.svg'" [attr.data-tooltip-target]="'tooltip-' + techIcon" data-tooltip-placement="bottom" class="w-10 pe-2.5">
+      <div id="tooltip-{{techIcon}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        {{techIcon}}
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </div>
   </div>
+
   <p class="py-5 text-xl md:w-3/4 ">
     {{projects[activeProjectIndex].description.descriptionText}}
   </p>
 
   <div class="flex">
-    <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" class="text-white font-medium rounded-lg text-xl px-5 py-2.5 mt-5 mb-5 me-2.5" [ngStyle]="{'background-color': colorService.getColor()}">Open project</a>
-    <a [href]="projects[activeProjectIndex].src" target="_blank" type="button" class="text-white font-medium rounded-lg text-xl px-5 py-2.5 mt-5 mb-5" [ngStyle]="{'background-color': colorService.getColor()}">Open code</a>
+    <a [href]="projects[activeProjectIndex].src" target="_blank" data-tooltip-target="tooltip-src" class="relative" type="button">
+      <svg class="transition-colors duration-300 ease-in w-10 h-10"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z"></path>
+      </svg>
+      <div id="tooltip-src" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        Open code
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </a>
+
+    <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" data-tooltip-target="tooltip-url" class="relative ms-5">
+      <svg class="transition-colors duration-300 ease-in w-10 h-10"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="stroke-1" clip-rule="evenodd" fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"></path>
+      </svg>   
+      <div id="tooltip-url" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        Open project
+        <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+    </a>
   </div>
 </div>
 
