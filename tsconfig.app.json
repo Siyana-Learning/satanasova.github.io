@@ -1,8 +1,10 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "types": []
   },
   "files": [
@@ -10,6 +12,7 @@
     "src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "src/**/*.json"
   ]
 }

@@ -54,9 +54,9 @@
       <li *ngFor="let techIconGroup of techIconGroups" class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg flex items-center relative">
         <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">{{ techIconGroup.name }}</span>
         <div *ngFor="let techIcon of techIconGroup.techs">
-          <img  [src]="'./assets/svg/tech-icons/' + techIcon + '.svg'" [attr.data-tooltip-target]="'tooltip-' + techIcon" class="w-10 pe-2.5">
-          <div id="tooltip-{{techIcon}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-            {{techIcon}}
+          <img  [src]="'./assets/svg/tech-icons/' + techIcon.svg + '.svg'" [attr.data-tooltip-target]="'tooltip-' + techIcon.svg" class="w-10 pe-2.5">
+          <div id="tooltip-{{techIcon.svg}}" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            {{techIcon.title}}
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
         </div>

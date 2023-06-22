@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorService } from '../utils/color.service';
+import techIconsData from '../utils/tech-icons.json';
 
 @Component({
   selector: 'app-education-and-skills',
@@ -33,12 +34,7 @@ export class EducationAndSkillsComponent implements OnInit {
     },
   ];
 
-  techIconGroups: any = [
-    {name: 'Templating', techs: ['html', 'pug']},
-    {name: 'Styling', techs: ['css', 'sass', 'bootstrap', 'tailwind']},
-    {name: 'Scripting', techs: ['js', 'ts', 'jquery', 'angular']},
-    {name: 'Tools', techs: ['npm', 'postman', 'git', 'github-black', 'vscode', 'ps', 'figma']},
-  ]
+  techIconGroups: any;
 
   viewInit: boolean = false;
 
@@ -46,7 +42,8 @@ export class EducationAndSkillsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    setTimeout(() => {this.viewInit = true},0)
+    setTimeout(() => {this.viewInit = true},0);
+    this.techIconGroups = techIconsData
   }
 
 }
