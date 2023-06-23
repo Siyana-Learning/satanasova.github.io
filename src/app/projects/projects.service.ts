@@ -15,7 +15,6 @@ export class ProjectsService {
   }
   
   getProjects() {
-    // return firstValueFrom(this.http.get<Project[]>('./assets/projects-data.json'))
     return this.projects;
   }
 

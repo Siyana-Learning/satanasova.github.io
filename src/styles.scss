@@ -3,3 +3,44 @@
 @import "../node_modules/tailwindcss/components.css";
 @import "../node_modules/tailwindcss/utilities.css";
 @import "./assets/icomoon/style.css";
+
+.tooltip-wrapper {
+  position: relative;
+
+  .tooltip-target:hover  {
+    & + .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;    
+      }
+    }
+    
+    & + .tooltip-content.bottom {
+      bottom: 0;
+      transform: translate(-30%, 130%);
+      &::after {
+        top: 0;
+        transform: translate(-50%, -98%);
+        border-bottom: 7px solid rgb(17 24 39 );
+      }
+    }
+
+    & + .tooltip-content.top {
+      top: 0;
+      transform: translate(-30%, -130%);
+      &::after {
+        bottom: 0;
+        transform: translate(-50%, 98%);
+        border-top: 7px solid black;
+      }
+    }
+  }
+}
