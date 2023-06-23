@@ -2,14 +2,14 @@
   {
     "name": "Templating",
     "techs": [
-      {"svg": "html","title": "HTML"},
+      {"svg": "html","title": "HTML5"},
       {"svg": "pug","title": "Pug"}
     ]
   },
   {
     "name": "Styling", 
     "techs": [
-      {"svg": "css", "title": "Css"}, 
+      {"svg": "css", "title": "CSS3"}, 
       {"svg": "sass", "title": "Sass"}, 
       {"svg": "bootstrap", "title": "Bootstrap"}, 
       {"svg": "tailwind",  "title": "Tailwind"}
@@ -30,8 +30,8 @@
       {"svg": "npm", "title": "NPM"},
       {"svg": "postman", "title": "Postman"},
       {"svg": "git", "title": "Git"},
-      {"svg": "github-black", "title": "Github"},
-      {"svg": "vscode", "title": "Vs Code"},
+      {"svg": "github-black", "title": "GitHub"},
+      {"svg": "vscode", "title": "Visual Studio Code"},
       {"svg": "ps", "title": "Photoshop"},
       {"svg": "figma","title": "Figma"}
     ]
