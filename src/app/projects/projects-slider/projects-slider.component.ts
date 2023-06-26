@@ -31,11 +31,6 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    window.addEventListener("message", receiveMessage, false);
-
-    function receiveMessage(event: any) {
-      console.log('receiveMessage', event, event.data);
-    }
   }
 
   prev() {
