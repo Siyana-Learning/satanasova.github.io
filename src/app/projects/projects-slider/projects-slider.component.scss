@@ -41,3 +41,26 @@
       opacity: 0.4;
   }
 }
+
+button {
+  &::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    margin-top: .3rem;
+    transition: all .3s ease-in;
+  }
+
+  &.active {
+    &::after {
+      width: 100%;
+    }
+    &:hover {
+      background-color: inherit;
+      cursor: auto;
+    }
+  }
+ 
+}
