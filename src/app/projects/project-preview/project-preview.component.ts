@@ -1,31 +1,49 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { DeviceType } from '../projects/models';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { DeviceType, ProjectPreviewConfig } from '../projects/models';
+import { ColorService } from 'src/app/utils/color.service';
 
 @Component({
   selector: 'app-project-preview',
   templateUrl: './project-preview.component.html',
   styleUrls: ['./project-preview.component.scss']
 })
-export class ProjectPreviewComponent implements OnInit, OnChanges {
-  @Input() iframeSrc: string = '';
-  @Input() showFrame: boolean = false;
-  @Input() text = '';
-  @Input() deviceWidth: number = DeviceType.PHONE.width;
-  @Input() deviceHeight: number = DeviceType.PHONE.height;
-  // deviceType: string = 'mobile'
-  // deviceType: DeviceType = DeviceType.mobile;
-  // deviceSize: DeviceSize = DeviceSize.mobile;
-  // deviceSize = {width: 123, height: 1230}
-  // deviceType: DeviceType = DeviceType.PHONE;
+export class ProjectPreviewComponent implements OnInit, OnChanges, AfterViewInit {
+  @ViewChild('iframe', {static: false})
+  iframe: any;
+
+  @Input() projectConfig: ProjectPreviewConfig = {
+    iframeSrc: '',
+    projectName: '',
+    isActiveProject: false,
+    deviceType: DeviceType.PHONE
+  }
   
-  constructor() { 
+  isFrameLoaded: boolean = false;
+  showFrame: boolean = false;
+
+  constructor(public colorService: ColorService) { 
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    
-    // console.log('new device is of type', this.deviceType.name);
+  ngAfterViewInit(): void {
+  }
+  
+  ngOnChanges(): void {
+    if(!this.projectConfig.isActiveProject) {
+      this.showFrame = false;
+    }
   }
   
   ngOnInit(): void {
   }
+
+  handleShowFrame() {
+    this.isFrameLoaded = false;
+    this.showFrame = true;
+
+    setTimeout(() => {
+      this.iframe.nativeElement.addEventListener('load', () => this.isFrameLoaded = true)
+    }, 0)
+  }
+
+
 }

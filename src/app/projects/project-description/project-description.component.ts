@@ -20,7 +20,6 @@ export class ProjectDescriptionComponent implements OnInit {
   
   ngOnInit(): void {
     this.techIconGroups = techIconsData;
-    console.log(this.techIconGroups);
   }
 
   getIconTitle(iconStr: string) {
