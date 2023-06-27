@@ -54,11 +54,15 @@
   }
 
   &.active {
+    color: white !important;
+    background-color: rgb(17 24 39);
+    svg {
+      stroke-width: 2px;
+    }
     &::after {
       width: 100%;
     }
     &:hover {
-      background-color: inherit;
       cursor: auto;
     }
   }
