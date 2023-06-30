@@ -1,6 +1,6 @@
-<div class="flex flex-wrap bg-white py-10">
-  <div class="education px-2 md:px-10  w-full md:w-1/2">
-    <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
+<div class="flex flex-wrap">
+  <div class="education px-2 md:px-10 relative w-full flex-grow md:w-1/2 overflow-hidden pt-10 pb-0 md:pb-10">
+    <h2 class="header relative font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
       <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z"></path>
@@ -11,14 +11,14 @@
       EDUCATION AND QUALIFIATION
     </h2>
 
-    <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+    <div class="divider relative block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
     <ol [ngStyle]="{'border-color': colorService.getColor()}" class="timeline relative border-l transition-colors duration-300 ease-in">          
       <li *ngFor="let lifeEvent of lifeEvents" class="mb-10 ml-4">
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
-        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
-        <p *ngIf="lifeEvent.subtitle" class="text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
+        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute z-10  w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
+        <time class="relative z-10 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
+        <h3 class="relative z-10 text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
+        <p *ngIf="lifeEvent.subtitle" class="relative z-10 text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
         <div *ngIf="lifeEvent.certificate" [ngClass]="viewInit ? '' : 'hidden'">
           <a (click)="lifeEvent.certificate.show = true" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -36,10 +36,22 @@
         </div>
       </li>
     </ol>
+
+    <div class="blob-container block w-1/2 h-1/2 absolute md:bottom-0 md:left-0">
+      <svg class="blob absolute" [ngStyle]="{'color': colorService.getColor()}"  viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M28.6,-47.8C36.7,-44.8,42.7,-36.5,43.8,-27.6C44.8,-18.8,40.8,-9.4,41.6,0.5C42.4,10.3,48,20.6,47.3,30C46.5,39.4,39.5,47.8,30.6,49.6C21.6,51.5,10.8,46.7,2.8,41.8C-5.2,36.9,-10.4,31.9,-14.1,27.1C-17.9,22.3,-20.2,17.6,-30.9,13.2C-41.6,8.7,-60.7,4.3,-68.8,-4.7C-76.9,-13.7,-74.1,-27.4,-68.4,-40.6C-62.7,-53.8,-54.2,-66.4,-42.3,-67.3C-30.4,-68.3,-15.2,-57.4,-2.5,-53.1C10.2,-48.7,20.4,-50.9,28.6,-47.8Z" transform="translate(100 100)" />
+      </svg>  
+      <svg class="blob absolute text-gray-300"  viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M28.6,-47.8C36.7,-44.8,42.7,-36.5,43.8,-27.6C44.8,-18.8,40.8,-9.4,41.6,0.5C42.4,10.3,48,20.6,47.3,30C46.5,39.4,39.5,47.8,30.6,49.6C21.6,51.5,10.8,46.7,2.8,41.8C-5.2,36.9,-10.4,31.9,-14.1,27.1C-17.9,22.3,-20.2,17.6,-30.9,13.2C-41.6,8.7,-60.7,4.3,-68.8,-4.7C-76.9,-13.7,-74.1,-27.4,-68.4,-40.6C-62.7,-53.8,-54.2,-66.4,-42.3,-67.3C-30.4,-68.3,-15.2,-57.4,-2.5,-53.1C10.2,-48.7,20.4,-50.9,28.6,-47.8Z" transform="translate(100 100)" />
+      </svg>
+      <svg class="blob absolute" [ngStyle]="{'color': colorService.getColor()}" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M28.6,-47.8C36.7,-44.8,42.7,-36.5,43.8,-27.6C44.8,-18.8,40.8,-9.4,41.6,0.5C42.4,10.3,48,20.6,47.3,30C46.5,39.4,39.5,47.8,30.6,49.6C21.6,51.5,10.8,46.7,2.8,41.8C-5.2,36.9,-10.4,31.9,-14.1,27.1C-17.9,22.3,-20.2,17.6,-30.9,13.2C-41.6,8.7,-60.7,4.3,-68.8,-4.7C-76.9,-13.7,-74.1,-27.4,-68.4,-40.6C-62.7,-53.8,-54.2,-66.4,-42.3,-67.3C-30.4,-68.3,-15.2,-57.4,-2.5,-53.1C10.2,-48.7,20.4,-50.9,28.6,-47.8Z" transform="translate(100 100)" />
+      </svg>
+    </div>
   </div>
   
-  <div class="profile px-2 md:px-10 bg-white w-full md:w-1/2">
-    <h2 class="font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
+  <div class="profile px-2 md:px-10 relative w-full md:w-1/2 overflow-hidden pb-10 pt-0 md:pt-10">
+    <h2 class="header relative z-10 font-medium flex items-center text-lg text-gray-100 bg-gray-700 w-max py-0.5 ps-2 pe-5 mb-2 rounded-full">
       <span [ngStyle]="{'background-color': colorService.getColor()}" class=" rounded-full p-0.5 me-2">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"></path>
@@ -48,9 +60,9 @@
       PROFILE
     </h2>
 
-    <div class="divider block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+    <div class="divider relative z-10 block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
-    <ul class="tech-icons text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-5">
+    <ul class="tech-icons relative z-10 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-5">
       <li *ngFor="let techIconGroup of techIconGroups" class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg flex items-center relative">
         <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">{{ techIconGroup.name }}</span>
         <div class="tooltip-wrapper" *ngFor="let techIcon of techIconGroup.techs">
@@ -62,7 +74,7 @@
       </li>
     </ul>
 
-    <div class="about-me block p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <div class="about-me relative z-10 block p-6 bg-white border border-gray-200 rounded-lg shadow">
       <p class="font-normal pb-2.5">
         Motivated and enthusiastic front-end developer with three years of self-education and practical experience. 
         Throughout my journey, I have developed a strong foundation in HTML, CSS and JavaScript, allowing me to create clean and responsive web designs. 
@@ -79,6 +91,12 @@
         As a junior front-end developer, I am eager to contribute my skills and creativity to projects that push boundaries and leave a lasting impact. 
         I am confident in my ability to adapt quickly, learn new technologies, and work seamlessly within a team.
       </p>
+    </div>
+
+    <div class="blob-container block w-2/3 absolute">
+      <svg class="blob absolute" [ngStyle]="{'color': colorService.getColor()}"  viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M49.3,-63C60.7,-49.2,64.4,-30.6,62.4,-15C60.4,0.7,52.7,13.3,45.5,26.6C38.2,39.8,31.4,53.6,19,62.8C6.6,72,-11.5,76.4,-26.4,71.4C-41.3,66.5,-53.1,52,-61,36.2C-68.8,20.5,-72.7,3.5,-68.1,-10.2C-63.5,-23.8,-50.4,-34.2,-37.7,-47.7C-24.9,-61.3,-12.5,-78,3.3,-81.9C19,-85.8,38,-76.8,49.3,-63Z" transform="translate(100 100)" />
+      </svg>
     </div>
   </div>
 </div>

@@ -1,8 +1,52 @@
-.modal {
-  backdrop-filter: blur(2px) brightness(0.2);
+:host {
+  display: block;
+  background-image: url('../../assets/images/education_background.png');
 }
 
-.hidden-modal {
-  opacity: 0;
-  left: -100%;
+.education {
+  .modal {
+    backdrop-filter: blur(2px) brightness(0.2);
+  }
+  
+  .hidden-modal {
+    opacity: 0;
+    left: -100%;
+  }
+
+  .blob-container {
+    @media screen and (max-width: 768px){
+      bottom: -25%;
+      right: -15%;
+      rotate: 180deg;
+    }
+    .blob {
+      scale: 1.5;
+      bottom: -40%;
+      left: -35%;
+      &:first-of-type {
+        rotate: 15deg;
+        animation-delay: 10s;
+      }
+      &:nth-of-type(2) {
+        rotate: -90deg;
+        animation-direction: reverse;
+      }
+      &:nth-of-type(3) {
+        rotate: -40deg;
+      }
+    }
+  }
 }
+
+.profile {
+  .blob-container {
+    top: 5%;
+    right: -5%;
+    @media screen and (max-width: 768px){
+      top: 15%;
+      left: -25%;
+    }
+  }
+}
+
+
