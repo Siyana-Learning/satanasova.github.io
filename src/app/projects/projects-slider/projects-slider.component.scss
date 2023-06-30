@@ -88,3 +88,29 @@
     }
   }
 }
+.device-button {
+  &::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    margin-top: .3rem;
+    transition: all .3s ease-in;
+  }
+
+  &.active {
+    color: white !important;
+    background-color: rgb(17 24 39);
+    svg {
+      stroke-width: 2px;
+    }
+    &::after {
+      width: 100%;
+    }
+    &:hover {
+      cursor: auto;
+    }
+  }
+ 
+}
