@@ -42,6 +42,52 @@
   }
 }
 
+.slider {
+  .blob-container {
+    &.start-blobs {
+      .blob {
+        &:first-of-type {
+          animation-delay: 10s;
+          rotate: -90deg;
+          left: -10%;
+          top: -30%;
+          filter: blur(15px) brightness(80%);
+        }
+        &:nth-of-type(2) {
+          animation-direction: reverse;
+          scale: 1.3;
+          left: -20%;
+          bottom: 0;
+          filter: blur(7px) brightness(90%);
+        }
+      }  
+    }
+    &.end-blobs {
+      .blob {
+        &:first-of-type {
+          rotate: 15deg;
+          animation-delay: 10s;
+          left: -40%;
+          top: -20%;
+          filter: blur(20px) brightness(80%);
+        }
+        &:nth-of-type(2) {
+          rotate: -90deg;
+          animation-direction: reverse;
+          top: -20%;
+          filter: blur(10px) brightness(90%);
+        }
+        &:nth-of-type(3) {
+          rotate: -40deg;
+          bottom: -15%;
+          right: -40%;
+          scale: 0.6;
+          filter: blur(7px);
+        }
+      }  
+    }
+  }
+}
 .device-button {
   &::after {
     content: '';
