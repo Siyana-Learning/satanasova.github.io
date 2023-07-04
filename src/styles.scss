@@ -10,10 +10,11 @@
     & + .tooltip-content {
       opacity: 1;
       visibility: visible;
-      left: 0;
+      left: 50%;
 
       &::after {
         content: '';
+        color: rgb(17 24 39);
         display: block;
         position: absolute;
         left: 50%;
@@ -24,21 +25,21 @@
     
     & + .tooltip-content.bottom {
       bottom: 0;
-      transform: translate(-30%, 130%);
+      transform: translate(-50%, 130%);
       &::after {
         top: 0;
         transform: translate(-50%, -98%);
-        border-bottom: 7px solid rgb(17 24 39);
+        border-bottom: 7px solid currentColor;
       }
     }
 
     & + .tooltip-content.top {
       top: 0;
-      transform: translate(-30%, -130%);
+      transform: translate(-50%, -130%);
       &::after {
         bottom: 0;
         transform: translate(-50%, 98%);
-        border-top: 7px solid rgb(17 24 39);
+        border-top: 7px solid currentColor;
       }
     }
   }
@@ -47,6 +48,7 @@
 .blob-container {
   z-index: 0;
   .blob {
+    filter: blur(2px);
     opacity: .6;
     width: 100%;
     transition: all .3s ease-in;
