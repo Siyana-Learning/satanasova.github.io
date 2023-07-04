@@ -3,8 +3,8 @@
   <div class="divider block w-40 h-0.5 my-2 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
 
   <div class="tech-icons flex items-center">
-    <div class="tooltip-wrapper" *ngFor="let techIcon of projects[activeProjectIndex].description.usedTech; let i = index">
-      <img  [src]="'./assets/svg/tech-icons/' + techIcon + '.svg'" class="tooltip-target w-10 h-10 pe-2.5">
+    <div class="tooltip-wrapper me-2.5" *ngFor="let techIcon of projects[activeProjectIndex].description.usedTech; let i = index">
+      <img  [src]="'./assets/svg/tech-icons/' + techIcon + '.svg'" class="tooltip-target w-8">
       <div class="tooltip-content bottom absolute z-10 invisible inline-block px-3 py-2 text-sm whitespace-nowrap font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
         {{getIconTitle(techIcon)}}
       </div>
