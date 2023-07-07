@@ -1,0 +1,7 @@
+<div (click)="close()" [ngClass]="!showModal ? 'hidden-modal' : ''" class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
+  <img class="max-h-full" [src]="imageSrc">
+
+  <svg class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
+  </svg>
+</div>

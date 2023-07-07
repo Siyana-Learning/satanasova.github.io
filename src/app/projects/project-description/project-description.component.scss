@@ -3,3 +3,13 @@
   background: #111827;
   background-image: url('../../../assets/images/desc-bg.png');
 }
+
+.tooltip-wrapper {
+  .tooltip-content {
+    color: #111827;
+    background-color: white;
+    &::after {
+      color: white !important;
+    }
+  }
+}

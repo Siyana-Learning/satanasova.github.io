@@ -31,8 +31,9 @@
       {"svg": "postman", "title": "Postman"},
       {"svg": "git", "title": "Git"},
       {"svg": "github-black", "title": "GitHub"},
-      {"svg": "vscode", "title": "Visual Studio Code"},
       {"svg": "ps", "title": "Photoshop"},
+      {"svg": "vscode", "title": "Visual Studio Code"},
+      {"svg": "jira","title": "Jira"},
       {"svg": "figma","title": "Figma"}
     ]
   }

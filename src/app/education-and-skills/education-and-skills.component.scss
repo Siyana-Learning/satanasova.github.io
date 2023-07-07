@@ -4,13 +4,10 @@
 }
 
 .education {
-  .modal {
-    backdrop-filter: blur(2px) brightness(0.2);
-  }
-  
-  .hidden-modal {
-    opacity: 0;
-    left: -100%;
+  .timeline {
+    li:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   .blob-container {
@@ -48,5 +45,6 @@
     }
   }
 }
+
 
 

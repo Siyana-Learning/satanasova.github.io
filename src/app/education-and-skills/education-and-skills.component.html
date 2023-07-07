@@ -13,29 +13,23 @@
 
     <div class="divider relative block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
-    <ol [ngStyle]="{'border-color': colorService.getColor()}" class="timeline relative border-l transition-colors duration-300 ease-in">          
-      <li *ngFor="let lifeEvent of lifeEvents" class="mb-10 ml-4">
-        <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute z-10  w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
-        <time class="relative z-10 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
-        <h3 class="relative z-10 text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
-        <p *ngIf="lifeEvent.subtitle" class="relative z-10 text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
-        <div *ngIf="lifeEvent.certificate" [ngClass]="viewInit ? '' : 'hidden'">
-          <a (click)="lifeEvent.certificate.show = true" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
+    <div class="bg-white border border-gray-200 rounded-lg p-5 shadow relative z-10">
+      <ol [ngStyle]="{'border-color': colorService.getColor()}" class="timeline relative border-l transition-colors duration-300 ease-in">          
+        <li *ngFor="let lifeEvent of lifeEvents" class="mb-10 ml-4">
+          <div [ngStyle]="{'background-color': colorService.getColor()}" class="absolute w-3 h-3 rounded-full mt-1.5 -left-1.5 border border-white  transition-colors duration-300 ease-in"></div>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{lifeEvent.date}}</time>
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{lifeEvent.title}}</h3>
+          <p *ngIf="lifeEvent.subtitle" class="relative  text-base font-normal text-gray-500 dark:text-gray-400">{{lifeEvent.subtitle}}</p>
+          <a *ngIf="lifeEvent.certificate" (click)="modalService.openModal(lifeEvent.certificate.src)" class="inline-flex items-center px-4 py-2 mt-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 cursor-pointer" [class]="'hover:text-' + colorService.getColor()">
             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
               <path clip-rule="evenodd" fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
-             View Certificate
+              View Certificate
           </a>
-          <div (click)="lifeEvent.certificate.show = false" [ngClass]="!lifeEvent.certificate.show ? 'hidden-modal' : '' " class="modal flex z-50 justify-center items-center fixed top-0 left-0 right-0 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full transition-all duration-300 ease-in">
-            <img class="max-h-full" [src]="lifeEvent.certificate.src" alt="">
-            <svg class="w-10 h-10 text-white cursor-pointer absolute top-2 right-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path>
-            </svg>
-          </div>
-        </div>
-      </li>
-    </ol>
+        </li>
+      </ol>  
+    </div>
 
     <div class="blob-container block w-1/2 h-1/2 absolute md:bottom-0 md:left-0">
       <svg class="blob absolute" [ngStyle]="{'color': colorService.getColor()}"  viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -62,12 +56,12 @@
 
     <div class="divider relative z-10 block w-full h-0.5 transition-colors duration-300 ease-in  mb-5" [ngStyle]="{'background-color': colorService.getColor()}"></div>
   
-    <ul class="tech-icons relative z-10 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-5">
+    <ul class="tech-icons relative z-20 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mb-5">
       <li *ngFor="let techIconGroup of techIconGroups" class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg flex items-center relative">
         <span [ngStyle]="{'background-color': colorService.getColor()}" class="text-white opacity-50 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">{{ techIconGroup.name }}</span>
-        <div class="tooltip-wrapper" *ngFor="let techIcon of techIconGroup.techs">
-          <img  [src]="'./assets/svg/tech-icons/' + techIcon.svg + '.svg'" class="tooltip-target w-10 pe-2.5">
-          <div class="tooltip-content bottom absolute z-10 invisible inline-block px-3 py-2 text-sm whitespace-nowrap font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        <div class="tooltip-wrapper me-2.5" *ngFor="let techIcon of techIconGroup.techs">
+          <img  [src]="'./assets/svg/tech-icons/' + techIcon.svg + '.svg'" class="tooltip-target w-8">
+          <div class="tooltip-content bottom absolute z-20 invisible inline-block px-3 py-2 text-sm whitespace-nowrap font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
             {{techIcon.title}}
           </div>
         </div>

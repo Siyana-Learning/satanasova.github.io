@@ -42,6 +42,16 @@
   }
 }
 
+.tooltip-wrapper {
+  .tooltip-content {
+    color: #111827;
+    background-color: white;
+    &::after {
+      color: white !important;
+    }
+  }
+}
+
 .slider {
   .blob-container {
     &.start-blobs {
@@ -88,6 +98,7 @@
     }
   }
 }
+
 .device-button {
   &::after {
     content: '';

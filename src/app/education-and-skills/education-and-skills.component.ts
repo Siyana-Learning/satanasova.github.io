@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorService } from '../utils/color.service';
 import techIconsData from '../utils/tech-icons.json';
+import { ModalService } from '../utils/modal.service';
 
 @Component({
   selector: 'app-education-and-skills',
@@ -36,13 +37,9 @@ export class EducationAndSkillsComponent implements OnInit {
 
   techIconGroups: any;
 
-  viewInit: boolean = false;
-
-  constructor(public colorService: ColorService) { }
-
+  constructor(public colorService: ColorService, public modalService: ModalService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {this.viewInit = true},0);
     this.techIconGroups = techIconsData
   }
 
