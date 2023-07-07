@@ -13,7 +13,7 @@ export class ImageModalComponent implements OnInit {
   constructor(public modalService: ModalService) { }
 
   ngOnInit(): void {
-    this.modalService.onModalRequested((imgSrc: string) => {
+    this.modalService.onImageModalRequested((imgSrc: string) => {
       if(imgSrc) {
         this.imageSrc = imgSrc;
         this.showModal = true; 

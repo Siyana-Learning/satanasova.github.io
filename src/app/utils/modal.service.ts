@@ -5,16 +5,15 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  modalOpened: BehaviorSubject<string> = new BehaviorSubject('');
+  imageModalRequested: BehaviorSubject<string> = new BehaviorSubject('');
 
   constructor() { }
 
   openModal(imageSrc: string) {
-    this.modalOpened.next(imageSrc);
+    this.imageModalRequested.next(imageSrc);
   }
 
-  onModalRequested(fn: any) {
-    this.modalOpened.subscribe(data => fn(data))
+  onImageModalRequested(imageModalRequestHandler: (value: string) => void) {
+    this.imageModalRequested.subscribe(imageModalRequestHandler)
   }
-
 }
