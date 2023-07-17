@@ -7,19 +7,30 @@
   <div class="screenshot-wrapper group w-full h-full relative ">
     <img [src]="'./assets/website-screenshots/' + projectConfig.projectName + '-' + projectConfig.deviceType.name + '.png'" class="w-full">
 
-    <div *ngIf="projectConfig.isActiveProject" (click)="handleShowFrame()" [ngClass]="!showFrame ? 'flex' : 'hidden'" class="overlay group-hover:opacity-100 opacity-0 transition-all duration-300 ease-in absolute top-0 backdrop-blur-sm backdrop-brightness-50 text-white cursor-pointer flex justify-center items-center text-3xl">
-        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M17.303 5.197A7.5 7.5 0 006.697 15.803a.75.75 0 01-1.061 1.061A9 9 0 1121 10.5a.75.75 0 01-1.5 0c0-1.92-.732-3.839-2.197-5.303zm-2.121 2.121a4.5 4.5 0 00-6.364 6.364.75.75 0 11-1.06 1.06A6 6 0 1118 10.5a.75.75 0 01-1.5 0c0-1.153-.44-2.303-1.318-3.182zm-3.634 1.314a.75.75 0 01.82.311l5.228 7.917a.75.75 0 01-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 01-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 01-1.247-.606l.569-9.47a.75.75 0 01.554-.68z"></path>
-        </svg>
-        <p>Click to interact</p>
-    </div>
+    <div *ngIf="projectConfig.isActiveProject" class="overlay absolute top-0 flex flex-wrap justify-center group-hover:opacity-100 opacity-0 transition-all duration-300 ease-in text-white text-3xl">
+      <div (click)="handleShowFrame()" [ngClass]="[!showFrame ? 'flex' : 'hidden', projectConfig.deviceType.name === 'laptop' ? 'w-1/2' : 'w-full']" class="interact flex justify-center items-center cursor-pointer hover:text-4xl transition-all duration-300 ease-in">
+          <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M17.303 5.197A7.5 7.5 0 006.697 15.803a.75.75 0 01-1.061 1.061A9 9 0 1121 10.5a.75.75 0 01-1.5 0c0-1.92-.732-3.839-2.197-5.303zm-2.121 2.121a4.5 4.5 0 00-6.364 6.364.75.75 0 11-1.06 1.06A6 6 0 1118 10.5a.75.75 0 01-1.5 0c0-1.153-.44-2.303-1.318-3.182zm-3.634 1.314a.75.75 0 01.82.311l5.228 7.917a.75.75 0 01-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 01-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 01-1.247-.606l.569-9.47a.75.75 0 01.554-.68z"></path>
+          </svg>
+          <p>Click to interact</p>
+      </div>
 
-    <div [ngClass]="showFrame && !isFrameLoaded ? 'flex' : 'hidden'" class="spinner absolute top-0 w-full h-full justify-center items-center backdrop-blur-sm backdrop-brightness-50" role="status">
-      <svg aria-hidden="true" class="w-16 h-16 mr-2 text-gray-200 animate-spin" [ngStyle]="{'fill': colorService.getColor()}" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-          <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-      </svg>
-      <span class="sr-only">Loading...</span>
+      <div class="divider absolute top-1/2 transition-colors duration-300 ease-in " [ngClass]="[!showFrame ? 'block' : 'hidden', projectConfig.deviceType.name === 'laptop' ? 'left-1/2 w-0.5 h-3/4' : 'w-3/4 h-0.5']" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+
+      <a [href]="projectConfig.iframeSrc" target="blank" [ngClass]="[!showFrame ? 'flex' : 'hidden', projectConfig.deviceType.name === 'laptop' ? 'w-1/2' : 'w-full']" class="open justify-center items-center cursor-pointer hover:text-4xl transition-all duration-300 ease-in">
+        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"></path>
+        </svg>
+        <p>Open in new tab</p>
+      </a>
+
+      <div [ngClass]="showFrame && !isFrameLoaded ? 'flex' : 'hidden'" class="spinner absolute w-full h-full justify-center items-center" role="status">
+        <svg aria-hidden="true" class="w-16 h-16 mr-2 text-gray-200 animate-spin" [ngStyle]="{'fill': colorService.getColor()}" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+        </svg>
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
   </div>
 </div>

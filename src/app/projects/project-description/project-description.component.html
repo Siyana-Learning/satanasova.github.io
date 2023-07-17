@@ -1,6 +1,34 @@
 <div *ngIf="projects.length > 0" class="flex flex-col items-center justify-center py-5 md:py-10 px-2 md:px-5">
-  <h2  class="text-3xl font-semibold">{{projects[activeProjectIndex].description.title}}</h2>
-  <div class="divider block w-40 h-0.5 my-2 transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+  <div class="flex items-center">
+    <div class="tooltip-wrapper flex items-center">
+      <a [href]="projects[activeProjectIndex].src" target="_blank" type="button" class="tooltip-target bg-gray-900 p-2 rounded-full border-2" [ngStyle]="{'border-color': colorService.getColor()}">
+        <svg class="transition-colors duration-300 ease-in w-6 h-6 text-white" fill="currentColor" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z"></path>
+        </svg>
+      </a>
+  
+      <div class="tooltip-content bottom absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        Open code
+      </div>
+    </div> 
+  
+    <div class="title flex-col justify-center">
+      <h2  class="text-3xl font-semibold mx-5">{{projects[activeProjectIndex].description.title}}</h2>
+      <div class="divider block w-40 h-0.5 my-2 mx-auto transition-all duration-300 ease-in" [ngStyle]="{'background-color': colorService.getColor()}"></div>
+    </div>
+  
+    <div class="tooltip-wrapper flex items-center">
+      <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" class="tooltip-target p-2 rounded-full border-2" [ngStyle]="{'border-color': colorService.getColor()}">
+        <svg class="transition-colors duration-300 ease-in w-6 h-6 text-white" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"></path>
+        </svg>   
+      </a>
+  
+      <div class="tooltip-content bottom absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+        Open project
+      </div>
+    </div>
+  </div>
 
   <div class="tech-icons flex items-center">
     <div class="tooltip-wrapper me-2.5" *ngFor="let techIcon of projects[activeProjectIndex].description.usedTech; let i = index">
@@ -14,32 +42,6 @@
   <p class="py-5 text-xl md:w-3/4 ">
     {{projects[activeProjectIndex].description.descriptionText}}
   </p>
-
-  <div class="flex py-5">
-    <div class="tooltip-wrapper">
-      <a [href]="projects[activeProjectIndex].src" target="_blank" class="tooltip-target" type="button">
-        <svg class="transition-colors duration-300 ease-in w-10 h-10"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path clip-rule="evenodd" fill-rule="evenodd" d="M6.28 5.22a.75.75 0 010 1.06L2.56 10l3.72 3.72a.75.75 0 01-1.06 1.06L.97 10.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0zm7.44 0a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 010-1.06zM11.377 2.011a.75.75 0 01.612.867l-2.5 14.5a.75.75 0 01-1.478-.255l2.5-14.5a.75.75 0 01.866-.612z"></path>
-        </svg>
-      </a>
-
-      <div class="tooltip-content top absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-        Open code
-      </div>
-    </div>
-
-    <div class="tooltip-wrapper ms-5">
-      <a [href]="projects[activeProjectIndex].url" target="_blank" type="button" class="tooltip-target">
-        <svg class="transition-colors duration-300 ease-in w-10 h-10"  [ngStyle]="{'color': colorService.getColor()}" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path class="stroke-1" clip-rule="evenodd" fill-rule="evenodd" d="M15.75 2.25H21a.75.75 0 01.75.75v5.25a.75.75 0 01-1.5 0V4.81L8.03 17.03a.75.75 0 01-1.06-1.06L19.19 3.75h-3.44a.75.75 0 010-1.5zm-10.5 4.5a1.5 1.5 0 00-1.5 1.5v10.5a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V10.5a.75.75 0 011.5 0v8.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V8.25a3 3 0 013-3h8.25a.75.75 0 010 1.5H5.25z"></path>
-        </svg>   
-      </a>
-
-      <div class="tooltip-content top absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium whitespace-nowrap text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-        Open project
-      </div>
-    </div>
-  </div>
 </div>
 
   
