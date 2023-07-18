@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DeviceType, Project } from '../projects/models';
 import { ColorService } from 'src/app/utils/color.service';
+import { Observable, Subject, fromEvent, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'app-projects-slider',
@@ -21,6 +22,9 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
   sliderContainerHeight: number = 0;
   sliderContainerWidth: number = 0;
 
+  navigateProjectsObs: Subject<string> = new Subject();
+  throttledNavigateProjectsObs: Observable<string> = this.navigateProjectsObs.pipe(throttleTime(500))
+
   constructor(public colorService: ColorService) { }
 
   ngAfterViewInit(): void {
@@ -31,6 +35,11 @@ export class ProjectsSliderComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.throttledNavigateProjectsObs.subscribe((direction: string) => direction === 'prev' ? this.prev() : this.next())
+  }
+
+  navigateProjects(direction: string) {
+    this.navigateProjectsObs.next(direction)
   }
 
   prev() {

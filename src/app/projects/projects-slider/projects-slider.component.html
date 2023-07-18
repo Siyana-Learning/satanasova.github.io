@@ -59,13 +59,13 @@
 
 </div>
 
-<div class="nav-buttons  bottom-0 my-3">
-  <button (click)="prev()" type="button" [ngStyle]="{'border-color': colorService.getColor()}" class="group transition-colors duration-300 ease-in border-2 hover:!border-gray-200 hover:bg-gray-400 rounded-full p-2.5 text-center inline-flex items-center">
+<div class="nav-buttons bottom-0 my-3">
+  <button (click)="navigateProjects('prev')" type="button" [ngStyle]="{'border-color': colorService.getColor()}" class="group transition-colors duration-300 ease-in border-2 hover:!border-gray-200 hover:bg-gray-400 rounded-full p-2.5 text-center inline-flex items-center">
     <svg aria-hidden="true"  [ngStyle]="{'color': colorService.getColor()}" class="transition-colors duration-300 ease-in w-5 h-5 text-gray sm:w-6 sm:h-6 group-hover:!text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
     <span class="sr-only">Prev</span>
   </button>
 
-  <button (click)="next()" type="button" [ngStyle]="{'border-color': colorService.getColor()}" class="group transition-colors duration-300 ease-in ms-5 border-2 hover:!border-gray-200 hover:bg-gray-400 rounded-full p-2.5 text-center inline-flex items-center">
+  <button (click)="navigateProjects('next')" type="button" [ngStyle]="{'border-color': colorService.getColor()}" class="group transition-colors duration-300 ease-in ms-5 border-2 hover:!border-gray-200 hover:bg-gray-400 rounded-full p-2.5 text-center inline-flex items-center">
     <svg aria-hidden="true"  [ngStyle]="{'color': colorService.getColor()}" class="transition-colors duration-300 ease-in w-5 h-5 text-gray sm:w-6 sm:h-6 group-hover:!text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
     <span class="sr-only">Next</span>
   </button>

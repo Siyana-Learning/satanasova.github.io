@@ -20,6 +20,7 @@ export class ProjectPreviewComponent implements OnInit, OnChanges, AfterViewInit
   
   isFrameLoaded: boolean = false;
   showFrame: boolean = false;
+  activeProjectTouched: boolean = false;
 
   constructor(public colorService: ColorService) { 
   }
@@ -36,7 +37,12 @@ export class ProjectPreviewComponent implements OnInit, OnChanges, AfterViewInit
   ngOnInit(): void {
   }
 
-  handleShowFrame() {
+  handleShowFrame(event: any) {
+    if(event.pointerType === 'touch' && !this.activeProjectTouched) {
+      this.activeProjectTouched = true;
+      return;
+    } 
+
     this.isFrameLoaded = false;
     this.showFrame = true;
 
@@ -44,6 +50,5 @@ export class ProjectPreviewComponent implements OnInit, OnChanges, AfterViewInit
       this.iframe.nativeElement.addEventListener('load', () => this.isFrameLoaded = true)
     }, 0)
   }
-
 
 }
